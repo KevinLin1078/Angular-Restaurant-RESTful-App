@@ -1,0 +1,17 @@
+<p>route1 works!</p>
+
+
+
+
+<div (click)='onSelect(department)' *ngFor='let department of departments' >
+
+   <span class='badge'  id='{{department.id}}'> {{department.id}}. {{department.name}} </span>
+
+</div>
+
+<style> 
+
+   span:hover{
+      background-color:blue
+   }
+</style>
