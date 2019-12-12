@@ -17,7 +17,6 @@ export class Route1Component implements OnInit {
   ]
   constructor(private router: Router) { }
 
-
   ngOnInit() { }
 
   onSelect(department){

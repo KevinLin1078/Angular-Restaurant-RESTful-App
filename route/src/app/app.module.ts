@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { Route1Component } from './route1/route1.component';
 import { Route2Component } from './route2/route2.component';
 import { RouteParamComponent } from './route-param/route-param.component';
-
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -17,7 +17,8 @@ import { RouteParamComponent } from './route-param/route-param.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

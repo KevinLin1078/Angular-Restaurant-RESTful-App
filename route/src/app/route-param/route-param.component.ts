@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router} from '@angular/router'
+import { HttpClient } from '@angular/common/http'
 @Component({
   selector: 'app-route-param',
   templateUrl: './route-param.component.html',
@@ -10,18 +11,27 @@ import { ActivatedRoute, Router} from '@angular/router'
 export class RouteParamComponent implements OnInit {
   
   public department_id;
-  constructor(private ActivatedRoute : ActivatedRoute, private Router: Router) { }
-  
-
+  public kitchens ;
+  constructor(private ActivatedRoute : ActivatedRoute, 
+              private Router: Router,
+              private HttpClient : HttpClient
+              ) {}
   async ngOnInit() {
-    
     // let id = parseInt(this.ActivatedRoute.snapshot.paramMap.get('id'))
     // this.department_id = id
-    var func = this.ActivatedRoute.paramMap.subscribe( params =>{
+    this.ActivatedRoute.paramMap.subscribe( params =>{
       console.log( params) 
       let id = parseInt(params.get('id'))
       this.department_id = id
     })
+
+    this.HttpClient.get('http://18.222.73.77').subscribe(response => {
+      this.kitchens = response.kitchens
+    })
+
+
+
+    
 
   }
 

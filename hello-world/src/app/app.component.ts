@@ -9,8 +9,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 
-
-
 // Equivalent JINJA in NODEJS
 export class AppComponent {
   title = 'hello-world';

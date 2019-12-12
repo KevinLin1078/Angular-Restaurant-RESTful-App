@@ -2,6 +2,13 @@
 
 <h3>  You selected {{department_id }}</h3>
 
+
+<div *ngFor='let kitchen of kitchens'>
+   <li> {{kitchen.kitchen_name}} </li>
+</div>
+
+
 <button (click)='goPrevious()' > Previous</button>
 <p></p>
 <button (click)='goNext()' > Next </button>
+

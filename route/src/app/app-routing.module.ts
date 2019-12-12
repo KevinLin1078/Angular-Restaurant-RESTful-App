@@ -12,8 +12,8 @@ const routes: Routes = [
   {path: 'routeParam', component: RouteParamComponent },
   {path: 'department/:id', component: RouteParamComponent}
 
-
 ];
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
@@ -21,10 +21,4 @@ const routes: Routes = [
 })
 
 export class AppRoutingModule { }
-
-
-
-
-
-
 export const routingComponents = [Route1Component, Route2Component]
