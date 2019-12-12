@@ -8,7 +8,6 @@ import {Router } from '@angular/router';
   styleUrls: ['./route1.component.css']
 })
 
-
 export class Route1Component implements OnInit {
 
   departments = [

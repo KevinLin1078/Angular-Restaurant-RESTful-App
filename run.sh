@@ -4,6 +4,7 @@ echo 'To initialize instance, type 1'
 echo 'To install angularJS, type 4'
 echo 'To start an angular project, type 5'
 echo 'To insatll typescript, type 6'
+
 echo -e 'Option: \c' 
 read option
 
@@ -32,5 +33,8 @@ then
 elif [ $option == 6 ]
 then
 	sudo /usr/bin/npm install -g typescript
+else
+	echo 'To run typescript, "tsc filename --watch"  '
+	echo 'To combine all tsc to a single file, "tsc ./* --out app.js" '
 fi
 

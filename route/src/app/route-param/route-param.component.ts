@@ -17,14 +17,11 @@ export class RouteParamComponent implements OnInit {
     
     // let id = parseInt(this.ActivatedRoute.snapshot.paramMap.get('id'))
     // this.department_id = id
-    console.log("async")
-    console.log(this.ActivatedRoute.paramMap.get('id'))
-    // var func = this.ActivatedRoute.paramMap.subscribe((params:ParamMap) =>{
-    //   let id = parseInt(params.get('id'))
-    //   this.department_id = id
-    // })
-    
-    
+    var func = this.ActivatedRoute.paramMap.subscribe( params =>{
+      console.log( params) 
+      let id = parseInt(params.get('id'))
+      this.department_id = id
+    })
 
   }
 
