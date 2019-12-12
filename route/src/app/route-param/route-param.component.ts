@@ -25,13 +25,6 @@ export class RouteParamComponent implements OnInit {
       this.department_id = id
     })
 
-    this.HttpClient.get('http://18.222.73.77').subscribe(response => {
-      this.kitchens = response.kitchens
-    })
-
-
-
-    
 
   }
 
