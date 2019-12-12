@@ -3,6 +3,7 @@ echo 'sudo apt install dos2unix'
 echo 'To initialize instance, type 1'
 echo 'To install angularJS, type 4'
 echo 'To start an angular project, type 5'
+echo 'To insatll typescript, type 6'
 echo -e 'Option: \c' 
 read option
 
@@ -15,6 +16,7 @@ then
 	sudo ufw allow 80
 	sudo ufw allow 8000
 	sudo ufw allow 3000
+	sudo /usr/bin/npm install -g typescript
 elif [ $option == 4 ]
 then
 	sudo apt-get install software-properties-common
@@ -27,7 +29,8 @@ then
 	echo -e "What would you like to name your project? \c"	
 	read project_name
 	sudo ng new $project_name
-else
-	echo "Hey"
+elif [ $option == 6 ]
+then
+	sudo /usr/bin/npm install -g typescript
 fi
 

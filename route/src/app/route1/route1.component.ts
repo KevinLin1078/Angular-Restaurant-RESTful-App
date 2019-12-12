@@ -14,7 +14,7 @@ export class Route1Component implements OnInit {
   departments = [
     {'id' : 1, 'name': "Angular"},
     {'id' : 2, 'name': "Node"},
-    {'id' : 2, 'name': "MongoDB"}
+    {'id' : 3, 'name': "MongoDB"}
   ]
   constructor(private router: Router) { }
 
