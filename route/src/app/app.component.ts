@@ -1,19 +1,32 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
+import { ActivatedRoute, Router} from '@angular/router'
+
+
+
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+
 export class AppComponent {
-  title = 'route';
-  public kitchens
-  constructor(private HttpClient : HttpClient){}
+  public login : boolean = false
+
+
+  constructor(private HttpClient : HttpClient,
+              private Router : Router
+            ){}
   
-  
-  ngOnInit() {
-    this.HttpClient.get('http://18.222.73.77').subscribe(response => {
-        this.kitchens = response.kitchens
-      })
+  ngOnInit() {    // this.Router.navigate(['']) 
   }
+  
+  set_login_false(){
+    this.login = false
+  }
+  set_login_true(){
+    this.login = true
+  }
+  
 }

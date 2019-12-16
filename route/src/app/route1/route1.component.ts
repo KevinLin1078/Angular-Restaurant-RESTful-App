@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-
+import { HttpClient } from '@angular/common/http'
 import {Router } from '@angular/router';
+
+
 
 @Component({
   selector: 'app-route1',
@@ -9,19 +11,20 @@ import {Router } from '@angular/router';
 })
 
 export class Route1Component implements OnInit {
+  public kitchens : any 
+  
 
-  departments = [
-    {'id' : 1, 'name': "Angular"},
-    {'id' : 2, 'name': "Node"},
-    {'id' : 3, 'name': "MongoDB"}
-  ]
-  constructor(private router: Router) { }
+  constructor(private router: Router,
+              private HttpClient: HttpClient    
+  ){}
 
-  ngOnInit() { }
-
-  onSelect(department){
-    this.router.navigate(['/department', department.id]);
-    
+  ngOnInit() {
+    this.HttpClient.get('http://18.222.73.77').subscribe(response => {
+        this.kitchens = response['kitchens'];
+        
+    })
   }
+
+
 
 }

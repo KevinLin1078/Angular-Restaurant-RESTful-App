@@ -8,17 +8,26 @@ import { Route2Component } from './route2/route2.component';
 import { RouteParamComponent } from './route-param/route-param.component';
 import { HttpClientModule } from '@angular/common/http';
 
+import { FormsModule } from '@angular/forms';
+import { CustomDirective } from './custom.directive';
+import { LoginComponent } from './login/login.component';
+import { ServiceComponent } from './service/service.component';
+
 @NgModule({
   declarations: [
     AppComponent,
     Route1Component,
     Route2Component,
-    RouteParamComponent
+    RouteParamComponent,
+    CustomDirective,
+    LoginComponent,
+    ServiceComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
