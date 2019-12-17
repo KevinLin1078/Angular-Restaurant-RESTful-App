@@ -12,9 +12,9 @@ import { ActivatedRoute, Router} from '@angular/router'
 })
 
 export class AppComponent {
-  public login : boolean = false
-
-
+  public login = false;
+  public username : string = null;
+  public provider : boolean;
   constructor(private HttpClient : HttpClient,
               private Router : Router
             ){}
@@ -22,11 +22,22 @@ export class AppComponent {
   ngOnInit() {    // this.Router.navigate(['']) 
   }
   
-  set_login_false(){
-    this.login = false
+  set_login_false(login_state: boolean){
+    this.login = login_state
   }
-  set_login_true(){
-    this.login = true
+
+  set_login_true(login_state: boolean){
+    console.log("here")
+    console.log(login_state)
+    this.login = login_state
   }
+  set_provider_true(provider: boolean){
+    this.provider = provider
+  }
+
+  set_username(username: string){
+    this.username = username
+  }
+  
   
 }

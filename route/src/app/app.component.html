@@ -8,24 +8,30 @@
        <i class="fa fa-remove"></i>
      </a>
      
-     <!-- {% if login %} <h4><b>Hey {{username}}! </b></h4> {% endif %} -->
+     <h4 *ngIf='login'><b>Hey {{username}}! </b></h4>
      
    </div>
    <div class="w3-bar-block">
-         
+    
        
-       <!-- {% if login %} 
-         <a href='{% url "kitchen:logout" %}' class="w3-bar-item w3-button w3-padding w3-text-teal"><i class="fa fa-user fa-fw w3-margin-right"></i>  Logout </a> &nbsp;&nbsp; 
-       {% else %}  -->
-         <!-- <a href='{% url "kitchen:login" %}'  class="w3-bar-item w3-button w3-padding w3-text-teal"><i class="fa fa-user fa-fw w3-margin-right"></i> Login </a>&nbsp;&nbsp; 
-         <a href='{% url "kitchen:signup" %}'  class="w3-bar-item w3-button w3-padding w3-text-teal"><i class="fa fa-user fa-fw w3-margin-right"></i> Signup </a>&nbsp;&nbsp; 
-       {% endif %} -->
-   
-       <a href='{% url "kitchen:index" %}' onclick="w3_close()" class="w3-bar-item w3-button w3-padding w3-text-teal"><i class="fa fa-th-large fa-fw w3-margin-right"></i>Home</a> 
-       <a href='{% url "kitchen:shoppingCart" %}' onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-user fa-fw w3-margin-right"></i>My Cart</a> 
-       <!-- {% if provider %} <a href='{% url "kitchen:providerKitchenView" %}' class="w3-bar-item w3-button w3-padding" ><i class="fa fa-th-large fa-fw w3-margin-right"></i> My Kitchen </a> {% endif %}
-       {% if provider %} <a href='{% url "kitchen:addKitchen" %}' class="w3-bar-item w3-button w3-padding" ><i class="fa fa-th-large fa-fw w3-margin-right"></i> Add Kitchen </a> {% endif %}
-       {% if login %} <a href='{% url "kitchen:orders" %}' class="w3-bar-item w3-button w3-padding "><i class="fa fa-user fa-fw w3-margin-right"></i>  Orders </a> &nbsp;&nbsp; {% endif %}  -->
+    
+     
+    <a *ngIf='!login' href='{% url "kitchen:signup" %}'  class="w3-bar-item w3-button w3-padding w3-text-teal"><i class="fa fa-user fa-fw w3-margin-right"></i> Signup </a>&nbsp;&nbsp; 
+    
+    <a *ngIf='login' href='{% url "kitchen:signup" %}'  class="w3-bar-item w3-button w3-padding w3-text-teal"><i class="fa fa-user fa-fw w3-margin-right"></i> Logout </a>&nbsp;&nbsp; 
+
+    <a href='{% url "kitchen:index" %}' onclick="w3_close()" class="w3-bar-item w3-button w3-padding w3-text-teal"><i class="fa fa-th-large fa-fw w3-margin-right"></i>Home</a> 
+    <a href='{% url "kitchen:shoppingCart" %}' onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-user fa-fw w3-margin-right"></i>My Cart</a> 
+    
+
+    <br *ngIf='!login'>
+    <br *ngIf='!login'>    
+
+    <app-login *ngIf='!login'  (login_state_changed)='set_login_true($event)' (provider_state_changed)='set_provider_true($event)' (username_changed)='set_username($event)'></app-login>
+  
+    <a *ngIf='provider' href='{% url "kitchen:providerKitchenView" %}' class="w3-bar-item w3-button w3-padding" ><i class="fa fa-th-large fa-fw w3-margin-right"></i> My Kitchen </a>
+    <a *ngIf='provider' href='{% url "kitchen:addKitchen" %}' class="w3-bar-item w3-button w3-padding" ><i class="fa fa-th-large fa-fw w3-margin-right"></i> Add Kitchen </a> 
+    <a *ngIf='login' href='{% url "kitchen:orders" %}' class="w3-bar-item w3-button w3-padding "><i class="fa fa-user fa-fw w3-margin-right"></i>  Orders </a> &nbsp;&nbsp;
      </div>
  </nav>
 
