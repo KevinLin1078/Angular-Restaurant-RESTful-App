@@ -11,8 +11,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { CustomDirective } from './custom.directive';
 import { LoginComponent } from './login/login.component';
-import { ServiceComponent } from './service/service.component';
+import { Pipe1Pipe } from './pipe1.pipe';
 // import { FormBuilder, FormGroup } from '@angular/forms';
+import { Service1Service } from './service1.service';
 
 
 @NgModule({
@@ -23,7 +24,7 @@ import { ServiceComponent } from './service/service.component';
     RouteParamComponent,
     CustomDirective,
     LoginComponent,
-    ServiceComponent
+    Pipe1Pipe
   ],
   imports: [
     BrowserModule,
@@ -31,8 +32,8 @@ import { ServiceComponent } from './service/service.component';
     HttpClientModule,
     FormsModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [Service1Service],
+  bootstrap: [AppComponent, LoginComponent]
  
 })
 export class AppModule { }
