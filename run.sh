@@ -1,11 +1,10 @@
-echo 'sudo apt-get update'
-echo 'sudo apt install dos2unix'
-echo 'To initialize instance, type 1'
-echo 'To install angularJS, type 4'
-echo 'To start an angular project, type 5'
-echo 'To install typescript, type 6'
-echo 'To install Nginx for Angular, type 7'
-echo 'To deploy Angular Project in NGINX, type 8'
+echo 'If THIS script is causing error, do "sudo apt-get update; sudo apt install dos2unix -y", then "sudo dos2unix scripname" '
+echo 'To INITIALIZE instance, type 1'
+echo 'To INSTALL Angular, type 4'
+echo 'To START an Angular project, type 5'
+echo 'To INSTALL typescript, type 6'
+echo 'To INSTALL Nginx for Angular, type 7'
+echo 'To DEPLOY Angular Project in NGINX, type 8'
 echo -e 'Option: \c' 
 read option
 
@@ -13,6 +12,7 @@ read option
 if [ $option == 1 ]
 then
 	sudo apt-get update
+	sudo apt install dos2unix -y
 	echo 'y' | sudo ufw enable
 	sudo ufw allow "OpenSSH"
 	sudo ufw allow 80
