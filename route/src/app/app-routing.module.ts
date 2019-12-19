@@ -8,8 +8,8 @@ import { RouteParamComponent} from './route-param/route-param.component'
 import { LoginComponent } from './login/login.component'
 
 const routes: Routes = [
-  {path: '', component:  Route1Component},
-  {path: 'login', component: LoginComponent }
+  { path: '', component:  Route1Component},
+  { path: 'login', component: Route1Component}
   // {path: '', component:  Route1Component},
   // {path: 'routeParam', component: RouteParamComponent },
   // {path: 'department/:id', component: RouteParamComponent}
@@ -22,3 +22,6 @@ const routes: Routes = [
 })
 
 export class AppRoutingModule { }
+
+
+// ng add @angular/material

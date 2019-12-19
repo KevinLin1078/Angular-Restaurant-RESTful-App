@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http'
 import { ActivatedRoute, Router} from '@angular/router'
 
 import { Service1Service } from './service1.service'
-
+// import {  }
 
 
 @Component({
@@ -41,6 +41,6 @@ export class AppComponent {
   set_username(username: string){
     this.username = username
   }
-  
+
   
 }

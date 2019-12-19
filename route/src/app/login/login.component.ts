@@ -1,8 +1,8 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, ViewChild } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Service1Service  } from '../service1.service'
-
+import { ActivatedRoute, Router} from '@angular/router'
 
 @Component({
   selector: 'app-login',
@@ -18,8 +18,9 @@ export class LoginComponent implements OnInit {
   @Output() username_changed : EventEmitter<string> = new EventEmitter();
   login_url = 'http://18.222.73.77/login/';
   
+  //@ViewChild('loginForm') public loginForm;
 
-  constructor(private HttpClient: HttpClient, public LoginService: Service1Service ) {}
+  constructor(private HttpClient: HttpClient, public LoginService: Service1Service, public ActivatedRoute: ActivatedRoute, public Router: Router ) {}
   
   ngOnInit() {    
   }
@@ -59,8 +60,15 @@ export class LoginComponent implements OnInit {
     // console.log("from login component", this.LoginService.allme())
 
   }
+  goto(){
+    this.Router.navigate(['login/hey'], {relativeTo:this.ActivatedRoute})
+  }
 
 }
+
+
+
+
 
 // httpOptions = {
 //   headers: new HttpHeaders({ 'Content-Type': 'application/json' }),

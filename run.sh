@@ -3,8 +3,9 @@ echo 'sudo apt install dos2unix'
 echo 'To initialize instance, type 1'
 echo 'To install angularJS, type 4'
 echo 'To start an angular project, type 5'
-echo 'To insatll typescript, type 6'
-
+echo 'To install typescript, type 6'
+echo 'To install Nginx for Angular, type 7'
+echo 'To deploy Angular Project in NGINX, type 8'
 echo -e 'Option: \c' 
 read option
 
@@ -33,6 +34,34 @@ then
 elif [ $option == 6 ]
 then
 	sudo /usr/bin/npm install -g typescript
+elif [ $option == 7 ]
+then
+	sudo apt-get update
+	sudo apt-get install -y nginx
+	sudo ufw allow 'Nginx HTTP'
+	sudo systemctl retart nginx
+	sudo systemctl status nginx
+elif [ $option == 8 ]
+then
+	echo -e "Enter name of project you want to deploy"
+	read name 
+
+	cd $name 
+	sudo npm run build
+	file=/etc/nginx/sites-enabled/default
+	angular_dir=/var/www/html/route
+	if [ -e  $file ]
+	then	
+		sudo rm $file
+	fi
+
+	if [ -d  $angular_dir ]
+	then	
+		sudo rm $angular_dir -rf
+	fi
+	sudo mv ./dist/$name /var/www/html
+	sudo cp ~/angular/default /etc/nginx/sites-enabled/
+	sudo systemctl restart nginx
 else
 	echo 'To run typescript, "tsc filename --watch"  '
 	echo 'To combine all tsc to a single file, "tsc ./* --out app.js" '

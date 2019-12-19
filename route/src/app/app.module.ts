@@ -14,6 +14,7 @@ import { LoginComponent } from './login/login.component';
 import { Pipe1Pipe } from './pipe1.pipe';
 // import { FormBuilder, FormGroup } from '@angular/forms';
 import { Service1Service } from './service1.service';
+import { CartComponent } from './cart/cart.component';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { Service1Service } from './service1.service';
     RouteParamComponent,
     CustomDirective,
     LoginComponent,
-    Pipe1Pipe
+    Pipe1Pipe,
+    CartComponent
   ],
   imports: [
     BrowserModule,

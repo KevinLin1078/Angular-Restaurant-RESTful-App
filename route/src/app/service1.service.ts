@@ -20,6 +20,14 @@ export class Service1Service {
   login_user(formData){
     return this.HttpClient.post<any>(this.login_url, formData /*,{observe: 'response'}*/)
   }
+  
+
+  logout_user(){
+    this.HttpClient.post<any>(this.logout_url, {}).subscribe((response)=>{
+      this.logout()
+    })
+  }
+
   logout(){
     this.login = false;
     this.provider = false;
@@ -27,11 +35,6 @@ export class Service1Service {
     localStorage.setItem('login', 'false');
     localStorage.setItem('username', null);
     localStorage.setItem('provider', 'false');
-  }
-  logout_user(){
-    this.HttpClient.post<any>(this.logout_url, {}).subscribe((response)=>{
-      this.logout()
-    })
   }
 
 }
