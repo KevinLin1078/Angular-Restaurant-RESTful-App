@@ -19,9 +19,9 @@
    
    <a *ngIf='LoginService.login' (click)="LoginService.logout_user()"  class="w3-bar-item w3-button w3-padding w3-text-teal"><i class="fa fa-user fa-fw w3-margin-right"></i> Logout </a>&nbsp;&nbsp; 
 
-   <a  onclick="w3_close()" class="w3-bar-item w3-button w3-padding w3-text-teal"><i class="fa fa-th-large fa-fw w3-margin-right"></i>Home</a> 
+   <a (click)="home()" class="w3-bar-item w3-button w3-padding w3-text-teal"><i class="fa fa-th-large fa-fw w3-margin-right"></i>Home</a> 
    <a (click)='cart_url()' onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-user fa-fw w3-margin-right"></i>My Cart</a> 
-   
+
 
    <br *ngIf='!LoginService.login'>
    <br *ngIf='!LoginService.login'>    
@@ -30,7 +30,7 @@
  
    <a *ngIf='LoginService.provider' href='{% url "kitchen:providerKitchenView" %}' class="w3-bar-item w3-button w3-padding" ><i class="fa fa-th-large fa-fw w3-margin-right"></i> My Kitchen </a>
    <a *ngIf='LoginService.provider' href='{% url "kitchen:addKitchen" %}' class="w3-bar-item w3-button w3-padding" ><i class="fa fa-th-large fa-fw w3-margin-right"></i> Add Kitchen </a> 
-   <a *ngIf='LoginService.login' href='{% url "kitchen:orders" %}' class="w3-bar-item w3-button w3-padding "><i class="fa fa-user fa-fw w3-margin-right"></i>  Orders </a> &nbsp;&nbsp;
+   <a *ngIf='LoginService.login' routerLink = '/orders' class="w3-bar-item w3-button w3-padding "><i class="fa fa-user fa-fw w3-margin-right"></i>  Orders </a> &nbsp;&nbsp;
     </div>
 </nav>
 

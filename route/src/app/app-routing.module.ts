@@ -7,13 +7,14 @@ import { Route2Component } from './route2/route2.component';
 import { RouteParamComponent} from './route-param/route-param.component';
 import { LoginComponent } from './login/login.component';
 import { CartComponent } from './cart/cart.component';
+import { OrderComponent } from './order/order.component';
 
 
 const routes: Routes = [
   { path: '', component: Route1Component},
   { path: 'login', component: Route1Component},
   { path: 'shoppingCart', component: CartComponent},
-  // { path: 'orders', component: OrderComponent},
+  { path: 'orders', component: OrderComponent},
 
   // {path: '', component:  Route1Component},
   // {path: 'routeParam', component: RouteParamComponent },
