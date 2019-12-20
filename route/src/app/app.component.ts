@@ -22,12 +22,20 @@ export class AppComponent {
     ){}
   
   ngOnInit() {    // this.Router.navigate(['']) 
-    localStorage.getItem('login') == 'false' ? this.LoginService.login = false : this.LoginService.login = true
-    localStorage.getItem('provider') == 'false' ? this.LoginService.provider = false : this.LoginService.provider = true
+    this.getFeedBack('login') == false? this.LoginService.login = false : this.LoginService.login = true
+    this.getFeedBack('provider') == false ? this.LoginService.provider = false : this.LoginService.provider = true
     this.LoginService.username = localStorage.getItem('username')
     
   }
   
+  getFeedBack(value):any {
+    if(localStorage.getItem(value) === null || localStorage.getItem(value).toString() === 'false' || localStorage.getItem(value) == undefined){
+      return false
+    }
+    return true
+    
+  }
+
   set_login_false(login_state: boolean){
     this.login = login_state
   }
