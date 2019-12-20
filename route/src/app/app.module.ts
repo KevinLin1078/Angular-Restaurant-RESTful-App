@@ -17,6 +17,7 @@ import { Service1Service } from './service1.service';
 import { CartService } from './cart.service'
 import { CartComponent } from './cart/cart.component';
 
+// import { CookieService } from 'ngx-cookie-service'
 
 @NgModule({
   declarations: [

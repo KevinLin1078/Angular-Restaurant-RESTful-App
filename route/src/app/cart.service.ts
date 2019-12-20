@@ -12,7 +12,7 @@ export class CartService {
   constructor(private HttpClient: HttpClient){}
 
   get_cart_request(){
-    return this.HttpClient.get<any>(this.cart_url, {} /*,{observe: 'response'}*/)
+    return this.HttpClient.get<any>(this.cart_url, {/*observe:'response' as 'body',*/ withCredentials: true})
   }
 
 
