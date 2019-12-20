@@ -25,6 +25,10 @@ export class AppComponent {
     this.getFeedBack('login') == false? this.LoginService.login = false : this.LoginService.login = true
     this.getFeedBack('provider') == false ? this.LoginService.provider = false : this.LoginService.provider = true
     this.LoginService.username = localStorage.getItem('username')
+
+    if(this.LoginService.login == false ){
+      this.home()
+    }
     
   }
   
@@ -36,23 +40,12 @@ export class AppComponent {
     
   }
 
-  set_login_false(login_state: boolean){
-    this.login = login_state
-  }
-
-  set_login_true(login_state: boolean){
-    console.log(login_state)
-    this.login = login_state
-  }
-  set_provider_true(provider: boolean){
-    this.provider = provider
-  }
-
-  set_username(username: string){
-    this.username = username
-  }
+  
 
   cart_url(){
     this.Router.navigate(['shoppingCart']) 
+  }
+  home(){
+    this.Router.navigate(['']) 
   }
 }

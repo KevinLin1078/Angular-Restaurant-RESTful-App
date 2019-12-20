@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { FormBuilder, FormGroup } from '@angular/forms';
-
+import {  Router} from '@angular/router'
 
 @Injectable({
   providedIn: 'root'
@@ -16,7 +16,7 @@ export class Service1Service {
   public provider : boolean;
   
   
-  constructor( private HttpClient: HttpClient,  ) { }
+  constructor( private HttpClient: HttpClient, public Router:Router ) { }
 
   login_user(formData){
     return this.HttpClient.post<any>(this.login_url, formData ,{/*observe:'response' as 'body',*/ withCredentials: true})
@@ -36,8 +36,12 @@ export class Service1Service {
     localStorage.setItem('login', 'false');
     localStorage.setItem('username', null);
     localStorage.setItem('provider', 'false');
+    this.go_home()
   }
 
+  go_home(){
+    this.Router.navigate(['']) 
+  }
 }
 
 

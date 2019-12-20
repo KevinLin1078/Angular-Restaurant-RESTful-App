@@ -9,10 +9,10 @@
        </tr>
        
           <tr *ngFor='let item of cart'>
-          <!-- <td class='td'>{{ item.dish.dish_name }}</td> -->
-          <!-- <td>${{ item.dish.price }}</td> -->
-          <!-- <td>{{ item.dish.kitchen.kitchen_name }}</td> -->
-          <!-- {% if purchased != True %} <td><a id='{{ item.id }}' href='#food' class='button'>Remove</a></td> {% endif %} -->
+          <td class='td'>{{ item.dish_name }}</td>
+          <td>${{ item.price }}</td>
+          <td>{{ item.kitchen_name }}</td>
+          <td><a id='{{ item.id }}' href='#food' class='button'>Remove</a></td> 
           </tr>
        
        
@@ -30,3 +30,31 @@
 
    
  </div>
+ <style>
+  .kitchen{
+    width: 300px;
+    height: 300px;
+    display: inline-block;
+  }
+  td.td{
+    border:1px solid green; 
+    border-radius: 5px;
+  }
+  td.td:hover{
+    background-color: lightskyblue;
+  }
+  button, .button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 6px 6px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  }
+  button:hover, .button:hover{
+    background-color: darkcyan;
+  } 
+
+</style>
