@@ -10,9 +10,11 @@ import { CartComponent } from './cart/cart.component';
 
 
 const routes: Routes = [
-  { path: '', component:  Route1Component},
+  { path: '', component: Route1Component},
   { path: 'login', component: Route1Component},
-  { path: 'shoppingCart', component: CartComponent}
+  { path: 'shoppingCart', component: CartComponent},
+  // { path: 'orders', component: OrderComponent},
+
   // {path: '', component:  Route1Component},
   // {path: 'routeParam', component: RouteParamComponent },
   // {path: 'department/:id', component: RouteParamComponent}

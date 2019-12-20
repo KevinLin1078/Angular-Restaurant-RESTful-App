@@ -16,6 +16,7 @@ import { Pipe1Pipe } from './pipe1.pipe';
 import { Service1Service } from './service1.service';
 import { CartService } from './cart.service'
 import { CartComponent } from './cart/cart.component';
+import { OrderComponent } from './order/order.component';
 
 // import { CookieService } from 'ngx-cookie-service'
 
@@ -28,7 +29,8 @@ import { CartComponent } from './cart/cart.component';
     CustomDirective,
     LoginComponent,
     Pipe1Pipe,
-    CartComponent
+    CartComponent,
+    OrderComponent
   ],
   imports: [
     BrowserModule,
