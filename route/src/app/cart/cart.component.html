@@ -12,7 +12,7 @@
           <td class='td'>{{ item.dish_name }}</td>
           <td>${{ item.price }}</td>
           <td>{{ item.kitchen_name }}</td>
-          <td><a id='{{ item.id }}' href='#food' class='button'>Remove</a></td> 
+          <td><a (click)='removeFromCart(item)' id='{{ item.id }}'  class='button'>Remove</a></td> 
           </tr>
 
      </table>

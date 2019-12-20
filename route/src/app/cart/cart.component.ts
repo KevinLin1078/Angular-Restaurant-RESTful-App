@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CartService  } from '../cart.service';
 import { Service1Service} from '../service1.service'
-
+import { ActivatedRoute, Router} from '@angular/router'
 
 @Component({
   selector: 'app-cart',
@@ -16,7 +16,7 @@ export class CartComponent implements OnInit {
   public cart_length;
   public total;
 
-  constructor( public CartService: CartService, public LoginService: Service1Service ) { }
+  constructor( public CartService: CartService, public LoginService: Service1Service, public Router:Router ) { }
 
 
   async ngOnInit() {
@@ -36,6 +36,15 @@ export class CartComponent implements OnInit {
 
   delay(ms: number) { 
     return new Promise( resolve => setTimeout(resolve, ms) ); 
+  }
+
+  async removeFromCart(item){
+    let response = await this.CartService.removeFromCart(item)
+    response.subscribe(async (response) =>{
+      // response['status'] == 'ok' ? this.Router.navigate(['shoppingCart']) : alert('faield')
+      console.log(response)
+    })
+    
   }
 
 }
