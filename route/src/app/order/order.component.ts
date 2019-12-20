@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { OrdersService } from '../orders.service';
+import { Service1Service} from '../service1.service'
 
 @Component({
   selector: 'app-order',
@@ -9,15 +10,18 @@ import { OrdersService } from '../orders.service';
 export class OrderComponent implements OnInit {
   public orders;
 
-  constructor(public ordersvc: OrdersService) { }
+  constructor(public ordersvc: OrdersService, public LoginService: Service1Service) { }
 
   ngOnInit() {
-    this.ordersvc.get_orders_request().subscribe(async (response)=>{
-      console.log(response['orders'])
-      this.orders = await response['orders']
-    })
+    if(this.LoginService.login == false ){
+      this.LoginService.go_home()
+    }else{    
+      this.ordersvc.get_orders_request().subscribe(async (response)=>{
+        console.log(response['orders'])
+        this.orders = await response['orders']
+      }
+      )}
+    }
   }
-  
-}
 
 

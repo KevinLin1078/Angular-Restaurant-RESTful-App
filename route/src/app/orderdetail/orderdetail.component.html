@@ -1,0 +1,21 @@
+
+
+<table style="width:100%">
+    <tr>
+        <th>Dish</th>
+        <th>Price</th>
+        <th>From</th>
+        <th></th>
+    </tr>
+
+    <tr *ngFor="let cart of carts">
+        <td class='td'>{{ item.dish.dish_name }}</td>
+        <td>${{ item.dish.price }}</td>
+        <td>{{ item.dish.kitchen.kitchen_name }}</td>
+        <td *ngIf="purchased != True">
+            <a id='{{ item.id }}' href='#food' class='button'>Remove</a>
+        </td> 
+    </tr>
+    
+
+</table>

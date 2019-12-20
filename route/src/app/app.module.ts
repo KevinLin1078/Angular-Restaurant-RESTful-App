@@ -17,6 +17,12 @@ import { Service1Service } from './service1.service';
 import { CartService } from './cart.service'
 import { CartComponent } from './cart/cart.component';
 import { OrderComponent } from './order/order.component';
+import { OrderdetailComponent } from './orderdetail/orderdetail.component';
+import { AddDishComponent } from './add-dish/add-dish.component';
+import { AddKitchenComponent } from './add-kitchen/add-kitchen.component';
+import { SignUpComponent } from './sign-up/sign-up.component';
+import { ProviderKitchenComponent } from './provider-kitchen/provider-kitchen.component';
+import { MenuComponent } from './menu/menu.component';
 
 // import { CookieService } from 'ngx-cookie-service'
 
@@ -30,7 +36,13 @@ import { OrderComponent } from './order/order.component';
     LoginComponent,
     Pipe1Pipe,
     CartComponent,
-    OrderComponent
+    OrderComponent,
+    OrderdetailComponent,
+    AddDishComponent,
+    AddKitchenComponent,
+    SignUpComponent,
+    ProviderKitchenComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,

@@ -8,6 +8,7 @@ import { RouteParamComponent} from './route-param/route-param.component';
 import { LoginComponent } from './login/login.component';
 import { CartComponent } from './cart/cart.component';
 import { OrderComponent } from './order/order.component';
+import { OrderdetailComponent } from './orderdetail/orderdetail.component';
 
 
 const routes: Routes = [
@@ -15,10 +16,9 @@ const routes: Routes = [
   { path: 'login', component: Route1Component},
   { path: 'shoppingCart', component: CartComponent},
   { path: 'orders', component: OrderComponent},
+  { path: 'orderdetail/:id', component: OrderdetailComponent}
 
   // {path: '', component:  Route1Component},
-  // {path: 'routeParam', component: RouteParamComponent },
-  // {path: 'department/:id', component: RouteParamComponent}
 
 ];
 
