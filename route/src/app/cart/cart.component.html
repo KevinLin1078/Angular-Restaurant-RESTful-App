@@ -1,1 +1,37 @@
-<p>cart works!</p>
+
+<div class="w3-row-padding w3-padding-16 w3-center" id="food">
+            
+        
+   <p> cart</p>
+
+   <!-- <table style="width:100%">
+       <tr>
+         <th>Dish</th>
+         <th>Price</th>
+         <th>From</th>
+         <th></th>
+       </tr>
+       {% for item in cart %} 
+          <tr>
+          <td class='td'>{{ item.dish.dish_name }}</td>
+          <td>${{ item.dish.price }}</td>
+          <td>{{ item.dish.kitchen.kitchen_name }}</td>
+          {% if purchased != True %} <td><a id='{{ item.id }}' href='#food' class='button'>Remove</a></td> {% endif %}
+          </tr>
+       {%endfor %}
+       
+
+
+
+     </table>
+     {% if in_cart == True %}
+       <p><h5> <b>  Total: $ {{total}} </b>  </h5> </p>
+     {% else %}
+     <p><h5> <b>  Total: $ {{price}} </b>  </h5> </p>
+     {% endif %} 
+     {% if purchased != True %} {% if cart_length != 0 %} <button class='purchaseButton' id='{{total}}'> Purchase </button> {% endif %}  {% endif %}
+       
+     </table> -->
+
+   
+ </div>

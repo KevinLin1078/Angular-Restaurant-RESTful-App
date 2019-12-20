@@ -15,10 +15,11 @@ export class Service1Service {
   public username : string;
   public provider : boolean;
   
+  
   constructor( private HttpClient: HttpClient,  ) { }
 
   login_user(formData){
-    return this.HttpClient.post<any>(this.login_url, formData /*,{observe: 'response'}*/)
+    return this.HttpClient.post<any>(this.login_url, formData ,{/*observe:'response' as 'body',*/ withCredentials: true})
   }
   
 
@@ -38,3 +39,9 @@ export class Service1Service {
   }
 
 }
+
+
+// httpOptions = {
+//   headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
+//   withCredentials: true, 
+//   observe: 'response'  }; 

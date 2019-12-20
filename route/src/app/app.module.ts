@@ -14,6 +14,7 @@ import { LoginComponent } from './login/login.component';
 import { Pipe1Pipe } from './pipe1.pipe';
 // import { FormBuilder, FormGroup } from '@angular/forms';
 import { Service1Service } from './service1.service';
+import { CartService } from './cart.service'
 import { CartComponent } from './cart/cart.component';
 
 
@@ -34,8 +35,8 @@ import { CartComponent } from './cart/cart.component';
     HttpClientModule,
     FormsModule
   ],
-  providers: [Service1Service],
-  bootstrap: [AppComponent, LoginComponent]
+  providers: [Service1Service,CartService],
+  bootstrap: [AppComponent]
  
 })
 export class AppModule { }

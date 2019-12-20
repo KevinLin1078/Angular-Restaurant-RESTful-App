@@ -18,6 +18,7 @@ export class LoginComponent implements OnInit {
   @Output() username_changed : EventEmitter<string> = new EventEmitter();
   login_url = 'http://18.222.73.77/login/';
   
+   
   //@ViewChild('loginForm') public loginForm;
 
   constructor(private HttpClient: HttpClient, public LoginService: Service1Service, public ActivatedRoute: ActivatedRoute, public Router: Router ) {}
@@ -43,13 +44,16 @@ export class LoginComponent implements OnInit {
     let response = await this.LoginService.login_user(formData)
     
     await response.subscribe( async ( response) =>{
-      if(response['status'] == 'okRest'){
+      if(response['status'] == 'ok'){
         await this.resetStorage(true, response['username'], response['provider'])
         console.log('Login Success')
+        console.log(response)
       }else{
         await this.resetStorage(false, null, null);
         console.log('Login Fail')
       }
+      
+      
     })
 
     

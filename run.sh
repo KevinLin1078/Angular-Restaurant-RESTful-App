@@ -2,9 +2,8 @@ echo 'If THIS script is causing error, do "sudo apt-get update; sudo apt install
 echo 'To INITIALIZE instance, type 1'
 echo 'To INSTALL Angular, type 4'
 echo 'To START an Angular project, type 5'
-echo 'To INSTALL typescript, type 6'
 echo 'To INSTALL Nginx for Angular, type 7'
-echo 'To DEPLOY Angular Project in NGINX, type 8'
+echo 'To DEPLOY and UPDATE Angular Project in NGINX, type 8'
 echo -e 'Option: \c' 
 read option
 
@@ -18,7 +17,6 @@ then
 	sudo ufw allow 80
 	sudo ufw allow 8000
 	sudo ufw allow 3000
-	sudo /usr/bin/npm install -g typescript
 elif [ $option == 4 ]
 then
 	sudo apt-get install software-properties-common
@@ -26,14 +24,14 @@ then
 	sudo apt-get install nodejs -y
 	sudo chmod 777 /usr/lib/node_modules/*
 	echo 'y' | sudo /usr/bin/npm install -g @angular/cli
+	sudo /usr/bin/npm install -g ngx-cookie-service
+	sudo /usr/bin/npm install -g typescript
 elif [ $option == 5 ]
 then
 	echo -e "What would you like to name your project? \c"	
 	read project_name
 	sudo ng new $project_name
-elif [ $option == 6 ]
-then
-	sudo /usr/bin/npm install -g typescript
+
 elif [ $option == 7 ]
 then
 	sudo apt-get update
@@ -41,6 +39,7 @@ then
 	sudo ufw allow 'Nginx HTTP'
 	sudo systemctl retart nginx
 	sudo systemctl status nginx
+	
 elif [ $option == 8 ]
 then
 	echo -e "Enter name of project you want to deploy"

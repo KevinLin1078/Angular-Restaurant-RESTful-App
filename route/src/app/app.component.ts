@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
 import { ActivatedRoute, Router} from '@angular/router'
 
-import { Service1Service } from './service1.service'
+import { Service1Service} from './service1.service'
 // import {  }
 
 
@@ -17,7 +17,9 @@ export class AppComponent {
   public login = false;
   public username : string = null;
   public provider : boolean;
-  constructor(private HttpClient : HttpClient,private Router : Router,public LoginService: Service1Service ){}
+  constructor(private HttpClient : HttpClient, private Router : Router,public LoginService: Service1Service
+    
+    ){}
   
   ngOnInit() {    // this.Router.navigate(['']) 
     localStorage.getItem('login') == 'false' ? this.LoginService.login = false : this.LoginService.login = true
@@ -42,5 +44,7 @@ export class AppComponent {
     this.username = username
   }
 
-  
+  cart_url(){
+    this.Router.navigate(['shoppingCart']) 
+  }
 }
