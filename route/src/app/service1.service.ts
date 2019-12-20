@@ -15,6 +15,7 @@ export class Service1Service {
   public username : string;
   public provider : boolean;
   
+
   
   constructor( private HttpClient: HttpClient, public Router:Router ) { }
 

@@ -14,18 +14,16 @@
           <td>{{ item.kitchen_name }}</td>
           <td><a id='{{ item.id }}' href='#food' class='button'>Remove</a></td> 
           </tr>
-       
-       
-
-
 
      </table>
-     <!-- {% if in_cart == True %}
-       <p><h5> <b>  Total: $ {{total}} </b>  </h5> </p>
-     {% else %}
-     <p><h5> <b>  Total: $ {{price}} </b>  </h5> </p>
-     {% endif %} 
-     {% if purchased != True %} {% if cart_length != 0 %} <button class='purchaseButton' id='{{total}}'> Purchase </button> {% endif %}  {% endif %} -->
+     <p *ngIf='in_cart'> <strong> Total: $ {{total}}  </strong>  </p>
+     <!-- {% if in_cart == True %} -->
+      <!-- <p *ngIf='in_cart'><h5> <b>  Total: $ {{total}} </b>  </h5> </p> -->
+     <!-- {% else %} -->
+     <!-- <p *ngIf="!in_cart"><h5> <b>  Total: $ {{price}} </b>  </h5> </p> -->
+     
+     <!-- {% if purchased != True %} {% if cart_length != 0 %} <button class='purchaseButton' id='{{total}}'> Purchase </button> {% endif %}  {% endif %} -->
+     <button *ngIf='cart_length > 0' class='purchaseButton' id=''> Purchase </button>
        
 
    
