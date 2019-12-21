@@ -5,17 +5,15 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class OrdersService {
-  orders_url = 'http://localhost:4200/orders/'
+  orders_url = 'http://18.222.73.77/orders/'
 
   constructor(private HttpClient: HttpClient) { }
 
-  get_orders_request(){
-    return this.HttpClient.get<any>(this.orders_url, 
-      {/*observe:'response' as 'body',*/ withCredentials: true})
+  get_orders(){
+    return this.HttpClient.get<any>(this.orders_url, {/*observe:'response' as 'body',*/ withCredentials: true})
   }
 
   getoneOrder(id){
-    return this.HttpClient.get<any>(this.orders_url+id, 
-      {/*observe:'response' as 'body',*/ withCredentials: true})
+    return this.HttpClient.get<any>(this.orders_url+id, {/*observe:'response' as 'body',*/ withCredentials: true})
   }
 }
