@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
 import { ActivatedRoute, Router} from '@angular/router'
 
-import { Service1Service} from './service1.service'
+import { Service1Service} from './service/service1.service'
 // import {  }
 
 

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { CartService  } from '../cart.service';
-import { Service1Service} from '../service1.service'
+import { CartService  } from '../service/cart.service';
+import { Service1Service} from '../service/service1.service'
 import { ActivatedRoute, Router} from '@angular/router'
 
 @Component({
@@ -41,8 +41,8 @@ export class CartComponent implements OnInit {
   async removeFromCart(item){
     let response = await this.CartService.removeFromCart(item)
     response.subscribe(async (response) =>{
-      // response['status'] == 'ok' ? this.Router.navigate(['shoppingCart']) : alert('faield')
       console.log(response)
+      response['status'] == 'ok' ? this.Router.navigate(['shoppingCart']) : alert('Removing Item Failed')
     })
     
   }

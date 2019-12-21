@@ -1,12 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { OrdersService } from '../orders.service';
+import { OrdersService } from '../service/orders.service';
 
 @Component({
   selector: 'app-orderdetail',
   templateUrl: './orderdetail.component.html',
   styleUrls: ['./orderdetail.component.css']
 })
+
+
+
+
 export class OrderdetailComponent implements OnInit {
   public OrderID;
   public errorMsg;

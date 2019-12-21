@@ -1,7 +1,7 @@
 import { Component, OnInit, Output, EventEmitter, ViewChild } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { Service1Service  } from '../service1.service'
+import { Service1Service  } from '../service/service1.service'
 import { ActivatedRoute, Router} from '@angular/router'
 
 @Component({
