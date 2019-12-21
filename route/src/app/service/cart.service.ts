@@ -18,6 +18,7 @@ export class CartService {
   }
 
   removeFromCart(item){
+    
     return this.HttpClient.post<any>(this.remove_cart_url + item.id.toString(), {},{/*observe:'response' as 'body',*/ withCredentials: true})
   }
 
