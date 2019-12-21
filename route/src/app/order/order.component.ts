@@ -16,12 +16,16 @@ export class OrderComponent implements OnInit {
     if(this.LoginService.login == false ){
       this.LoginService.go_home()
     }else{    
-      this.ordersvc.get_orders_request().subscribe(async (response)=>{
-        console.log(response['orders'])
-        this.orders = await response['orders']
-      }
-      )}
+      this.ordersvc.get_orders_request().subscribe(
+        async (response)=>{
+          console.log(response['orders'])
+          this.orders = await response['orders']
+        }
+      )
     }
+  }
+
+
   }
 
 

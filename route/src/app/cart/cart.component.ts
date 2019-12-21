@@ -40,11 +40,29 @@ export class CartComponent implements OnInit {
 
   async removeFromCart(item){
     let response = await this.CartService.removeFromCart(item)
-    response.subscribe(async (response) =>{
-      console.log(response)
-      response['status'] == 'ok' ? this.Router.navigate(['shoppingCart']) : alert('Removing Item Failed')
-    })
+    response.subscribe(
+      async (response) =>{
+        console.log(response)
+        response['status'] == 'ok' ? this.ngOnInit() : alert('Django RemoveCart Error')
+      },
+      (error)=>{
+        alert('Removing Item Failed')
+      }
+    )
     
+  }
+
+  async purchase(){
+    let response = await this.CartService.purchase()
+    response.subscribe(
+      (response) =>{
+        response['status'] == 'ok' ? this.ngOnInit():  alert('Django Purchase Error')
+      },
+      (error) => {
+        alert('Purchasing Item Failed')
+      }  
+    )
+
   }
 
 }

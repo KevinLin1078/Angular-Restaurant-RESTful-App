@@ -23,7 +23,7 @@
      <!-- <p *ngIf="!in_cart"><h5> <b>  Total: $ {{price}} </b>  </h5> </p> -->
      
      <!-- {% if purchased != True %} {% if cart_length != 0 %} <button class='purchaseButton' id='{{total}}'> Purchase </button> {% endif %}  {% endif %} -->
-     <button *ngIf='cart_length > 0' class='purchaseButton' id=''> Purchase </button>
+     <button *ngIf='cart_length > 0' (click)='purchase()' class='purchaseButton' id=''> Purchase </button>
        
 
    
