@@ -15,6 +15,10 @@ import { Pipe1Pipe } from './pipe1.pipe';
 // import { FormBuilder, FormGroup } from '@angular/forms';
 import { Service1Service } from './service/service1.service';
 import { CartService } from './service/cart.service'
+import { KitchenService } from './service/kitchen.service'
+
+
+//Component
 import { CartComponent } from './cart/cart.component';
 import { OrderComponent } from './order/order.component';
 import { OrderdetailComponent } from './orderdetail/orderdetail.component';

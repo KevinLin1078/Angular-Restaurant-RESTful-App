@@ -1,6 +1,8 @@
+<h2 style='margin-top: -80px; margin-left: 470px;'><b>Cart</b></h2>
 
 <div class="w3-row-padding w3-padding-16 w3-center" id="food">
-   <table style="width:100%">
+  <p  *ngIf='cart_length == 0'> <strong> Cart is Empty  </strong>  </p> 
+  <table  *ngIf='cart_length > 0' style="width:100%">
        <tr>
          <th>Dish</th>
          <th>Price</th>
@@ -9,14 +11,16 @@
        </tr>
        
           <tr *ngFor='let item of cart'>
-          <td class='td'>{{ item.dish_name }}</td>
-          <td>${{ item.price }}</td>
-          <td>{{ item.kitchen_name }}</td>
+            <td class='td'>{{ item.dish_name }}</td>
+            <td>${{ item.price }}</td>
+            <td>{{ item.kitchen_name }}</td>
           <td><a (click)='removeFromCart(item)' id='{{ item.id }}'  class='button'>Remove</a></td> 
           </tr>
 
+          
+          
      </table>
-     <p *ngIf='in_cart'> <strong> Total: $ {{total}}  </strong>  </p>
+     
      <!-- {% if in_cart == True %} -->
       <!-- <p *ngIf='in_cart'><h5> <b>  Total: $ {{total}} </b>  </h5> </p> -->
      <!-- {% else %} -->
@@ -24,11 +28,12 @@
      
      <!-- {% if purchased != True %} {% if cart_length != 0 %} <button class='purchaseButton' id='{{total}}'> Purchase </button> {% endif %}  {% endif %} -->
      <button *ngIf='cart_length > 0' (click)='purchase()' class='purchaseButton' id=''> Purchase </button>
-       
+     <p  *ngIf='cart_length > 0'> <strong> Total: $ {{total}}  </strong>  </p>
+     
 
-   
  </div>
- <style>
+
+<style>
   .kitchen{
     width: 300px;
     height: 300px;

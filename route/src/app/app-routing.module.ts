@@ -9,16 +9,16 @@ import { LoginComponent } from './login/login.component';
 import { CartComponent } from './cart/cart.component';
 import { OrderComponent } from './order/order.component';
 import { OrderdetailComponent } from './orderdetail/orderdetail.component';
-
+import { ProviderKitchenComponent } from './provider-kitchen/provider-kitchen.component'
 
 const routes: Routes = [
   { path: '', component: Route1Component},
   { path: 'login', component: Route1Component},
   { path: 'shoppingCart', component: CartComponent},
   { path: 'orders', component: OrderComponent},
-  { path: 'orderdetail/:id', component: OrderdetailComponent}
-
-  // {path: '', component:  Route1Component},
+  { path: 'orderdetail/:id', component: OrderdetailComponent},
+  { path: 'myKitchen', component: ProviderKitchenComponent},
+  
 
 ];
 

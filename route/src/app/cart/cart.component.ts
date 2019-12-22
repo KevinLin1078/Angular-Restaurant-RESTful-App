@@ -56,7 +56,7 @@ export class CartComponent implements OnInit {
     let response = await this.CartService.purchase()
     response.subscribe(
       (response) =>{
-        response['status'] == 'ok' ? this.ngOnInit():  alert('Django Purchase Error')
+        response['status'] == 'ok' ? this.Router.navigate(['orders']):  alert('Django Purchase Error')
       },
       (error) => {
         alert('Purchasing Item Failed')

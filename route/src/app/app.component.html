@@ -20,7 +20,7 @@
    <a *ngIf='LoginService.login' (click)="LoginService.logout_user()"  class="w3-bar-item w3-button w3-padding w3-text-teal"><i class="fa fa-user fa-fw w3-margin-right"></i> Logout </a>&nbsp;&nbsp; 
 
    <a (click)="home()" class="w3-bar-item w3-button w3-padding w3-text-teal"><i class="fa fa-th-large fa-fw w3-margin-right"></i>Home</a> 
-   <a (click)='cart_url()' onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-user fa-fw w3-margin-right"></i>My Cart</a> 
+   <a *ngIf='LoginService.provider' (click)='cart_url()' onclick="w3_close()" class="w3-bar-item w3-button w3-padding"><i class="fa fa-user fa-fw w3-margin-right"></i>My Cart</a> 
 
 
    <br *ngIf='!LoginService.login'>
@@ -28,7 +28,7 @@
    
    <app-login *ngIf='!LoginService.login'  (login_state_changed)='set_login_true($event)' (provider_state_changed)='set_provider_true($event)' (username_changed)='set_username($event)'></app-login>
  
-   <a *ngIf='LoginService.provider' href='{% url "kitchen:providerKitchenView" %}' class="w3-bar-item w3-button w3-padding" ><i class="fa fa-th-large fa-fw w3-margin-right"></i> My Kitchen </a>
+   <a *ngIf='LoginService.provider'  routerLink = '/myKitchen' class="w3-bar-item w3-button w3-padding" ><i class="fa fa-th-large fa-fw w3-margin-right"></i> My Kitchen </a>
    <a *ngIf='LoginService.provider' href='{% url "kitchen:addKitchen" %}' class="w3-bar-item w3-button w3-padding" ><i class="fa fa-th-large fa-fw w3-margin-right"></i> Add Kitchen </a> 
    <a *ngIf='LoginService.login' routerLink = '/orders' class="w3-bar-item w3-button w3-padding "><i class="fa fa-user fa-fw w3-margin-right"></i>  Orders </a> &nbsp;&nbsp;
     </div>
@@ -42,14 +42,14 @@
     <span class="w3-button w3-hide-large w3-xxlarge w3-hover-text-grey" onclick="w3_open()"><i class="fa fa-bars"></i></span>
     <div class="w3-container">
     
-    <h1><b>All Kitchens</b></h1>
+    
     
     <div class="w3-section w3-bottombar w3-padding-16">
       <span class="w3-margin-right">Filter:</span> 
-      <button class="w3-button w3-black">All Kitchen</button>&nbsp;
-      
-      <button class="w3-button w3-white w3-hide-small"><i></i>Cart</button>&nbsp;
-      <button class="w3-button w3-white w3-hide-small"><i class="fa"></i>Orders</button>
+      <button (click)="home()" class="w3-button w3-green">Home</button>&nbsp;
+      <button *ngIf='LoginService.provider'  routerLink = '/myKitchen' class="w3-button w3-green">My Kitchen</button>&nbsp;
+      <button *ngIf='LoginService.provider' (click)='cart_url()' class="w3-button w3-green w3-hide-small"><i></i>Cart</button>&nbsp;
+      <button *ngIf='LoginService.login' routerLink = '/orders' class="w3-button w3-green w3-hide-small"><i class="fa"></i>Orders</button>
     </div>
     </div>
   </header>
