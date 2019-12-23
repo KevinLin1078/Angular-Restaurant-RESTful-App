@@ -9,7 +9,7 @@
           <th>Price</th>
         </tr>
         <tr *ngFor="let order of orders">
-          <td class='td'>  {{ order.id }}</td>
+          <td class='td' (click)='goDetail(order.id)'>  {{ order.id }}</td>
           <td>${{ order.price }}</td>
         </tr>
       </table>
