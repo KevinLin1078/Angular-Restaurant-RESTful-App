@@ -29,7 +29,7 @@
    <app-login *ngIf='!LoginService.login'  (login_state_changed)='set_login_true($event)' (provider_state_changed)='set_provider_true($event)' (username_changed)='set_username($event)'></app-login>
  
    <a *ngIf='LoginService.provider'  routerLink = '/myKitchen' class="w3-bar-item w3-button w3-padding" ><i class="fa fa-th-large fa-fw w3-margin-right"></i> My Kitchen </a>
-   <a *ngIf='LoginService.provider' href='{% url "kitchen:addKitchen" %}' class="w3-bar-item w3-button w3-padding" ><i class="fa fa-th-large fa-fw w3-margin-right"></i> Add Kitchen </a> 
+   <a *ngIf='LoginService.provider' (click)='addKitchenForm()' class="w3-bar-item w3-button w3-padding" ><i class="fa fa-th-large fa-fw w3-margin-right"></i> Add Kitchen </a> 
    <a *ngIf='LoginService.login' routerLink = '/orders' class="w3-bar-item w3-button w3-padding "><i class="fa fa-user fa-fw w3-margin-right"></i>  Orders </a> &nbsp;&nbsp;
     </div>
 </nav>

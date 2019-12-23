@@ -9,8 +9,8 @@ import { LoginComponent } from './login/login.component';
 import { CartComponent } from './cart/cart.component';
 import { OrderComponent } from './order/order.component';
 import { OrderdetailComponent } from './orderdetail/orderdetail.component';
-import { ProviderKitchenComponent } from './provider-kitchen/provider-kitchen.component'
-
+import { ProviderKitchenComponent } from './provider-kitchen/provider-kitchen.component';
+import { AddKitchenComponent } from './add-kitchen/add-kitchen.component';
 const routes: Routes = [
   { path: '', component: Route1Component},
   { path: 'login', component: Route1Component},
@@ -18,7 +18,7 @@ const routes: Routes = [
   { path: 'orders', component: OrderComponent},
   { path: 'orderdetail/:id', component: OrderdetailComponent},
   { path: 'myKitchen', component: ProviderKitchenComponent},
-  
+  { path: 'addKitchen', component:  AddKitchenComponent},
 
 ];
 

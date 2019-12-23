@@ -9,8 +9,8 @@ import {  Router} from '@angular/router'
 
 
 export class Service1Service {
-  login_url = 'http://18.222.73.77/login/';
-  logout_url = 'http://18.222.73.77/logout/';
+  login_url = 'http://18.224.151.69/login/';
+  logout_url = 'http://18.224.151.69/logout/';
   public login : boolean = false;
   public username : string;
   public provider : boolean;

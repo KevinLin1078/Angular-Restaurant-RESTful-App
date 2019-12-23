@@ -5,7 +5,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class OrdersService {
-  orders_url = 'http://18.222.73.77/orders/'
+  orders_url = 'http://18.224.151.69/orders/'
 
   constructor(private HttpClient: HttpClient) { }
 

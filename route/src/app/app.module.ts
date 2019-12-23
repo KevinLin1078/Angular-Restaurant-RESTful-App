@@ -54,7 +54,7 @@ import { MenuComponent } from './menu/menu.component';
     HttpClientModule,
     FormsModule
   ],
-  providers: [Service1Service,CartService],
+  providers: [Service1Service,CartService, KitchenService],
   bootstrap: [AppComponent]
  
 })

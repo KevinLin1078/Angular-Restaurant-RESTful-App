@@ -48,4 +48,9 @@ export class AppComponent {
   home(){
     this.Router.navigate(['']) 
   }
+  
+  addKitchenForm(){
+    this.Router.navigate(['addKitchen']) 
+  }
+
 }
