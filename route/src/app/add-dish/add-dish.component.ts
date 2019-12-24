@@ -41,5 +41,5 @@ export class AddDishComponent implements OnInit {
       this.ngOnInit()
     })
 
-
+  }
 }
