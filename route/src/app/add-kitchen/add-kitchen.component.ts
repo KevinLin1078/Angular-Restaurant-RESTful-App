@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { KitchenService } from '../service/kitchen.service'
-
+import {  Router } from '@angular/router';
 
 
 
@@ -14,7 +14,7 @@ export class AddKitchenComponent implements OnInit {
 
   public imageFile 
 
-  constructor(public KitchenService: KitchenService ) { }
+  constructor(public KitchenService: KitchenService , public Router:Router) { }
 
   ngOnInit() {
   }
@@ -22,18 +22,26 @@ export class AddKitchenComponent implements OnInit {
 
   async add_kitchen(form){
     const formData = new FormData();
+    
+    await this.delay(300)
+    console.log(form.value)    
     formData.append("CSRF_TOKEN", '{{ csrf_token() }}')
-    formData.append("kitchen_name", form.value.kitchen_name)
+    await formData.append("kitchen_name", form.value.kitchen_name)
     formData.append("image", this.imageFile)
-
+    
     let repsonse = await this.KitchenService.addKitchen(formData)
     repsonse.subscribe((resp)=>{
       console.log(resp)
+      this.Router.navigate(['myKitchen'])
     })
 
     
 
 
+  }
+
+  delay(ms: number) { 
+    return new Promise( resolve => setTimeout(resolve, ms) ); 
   }
 
   saveImage(files){

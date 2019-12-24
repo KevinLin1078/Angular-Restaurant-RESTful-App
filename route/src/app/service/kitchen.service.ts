@@ -18,10 +18,12 @@ export class KitchenService {
     return this.HttpClient.get(this.provider_kitchen_url, {/*observe:'response' as 'body',*/ withCredentials: true})
   }
 
+  
 
   addKitchen(formData){
     return this.HttpClient.post(this.add_kitchen_url, formData, {/*observe:'response' as 'body',*/ withCredentials: true})
   }
+
 
 
 
