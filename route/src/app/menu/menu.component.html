@@ -16,7 +16,7 @@
               <td class='td'>{{ dish.dish_name }}</td>
               <td >${{ dish.price }}</td>
               <td >{{ dish.is_vegan }}</td>
-              <td> <button class='addToCart' id='{{ dish.id }}' > Add To Cart</button> </td>
+              <td> <button (click)='addToCart(dish)' class='addToCart' id='{{ dish.id }}' > Add To Cart</button> </td>
             </tr>
 
           

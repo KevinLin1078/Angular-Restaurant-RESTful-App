@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
 export class MenuService {
   menu_url = 'http://18.224.151.69/view/menu/kitchen'
   provider_menu_url = 'http://18.224.151.69/menu/kitchen/';
-  
+  addToCart_url = 'http://18.224.151.69/addToCart/';
 
   constructor(private HttpClient: HttpClient) { }
 
@@ -22,4 +22,10 @@ export class MenuService {
   addDishToMenu(id, data){
     return this.HttpClient.post(this.provider_menu_url+id+'/', data ,{/*observe:'response' as 'body',*/ withCredentials: true})
   }
+
+  addToCart(data){
+    return this.HttpClient.post(this.addToCart_url, data ,{/*observe:'response' as 'body',*/ withCredentials: true})
+  }
+
+
 }
