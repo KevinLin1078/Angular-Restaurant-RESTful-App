@@ -11,6 +11,8 @@ import { OrderComponent } from './order/order.component';
 import { OrderdetailComponent } from './orderdetail/orderdetail.component';
 import { ProviderKitchenComponent } from './provider-kitchen/provider-kitchen.component';
 import { AddKitchenComponent } from './add-kitchen/add-kitchen.component';
+import { AddDishComponent } from './add-dish/add-dish.component'
+
 const routes: Routes = [
   { path: '', component: Route1Component},
   { path: 'login', component: Route1Component},
@@ -19,7 +21,7 @@ const routes: Routes = [
   { path: 'orderdetail/:id', component: OrderdetailComponent},
   { path: 'myKitchen', component: ProviderKitchenComponent},
   { path: 'addKitchen', component:  AddKitchenComponent},
-
+  { path: 'menu/kitchen/:id' , component: AddDishComponent},
 ];
 
 @NgModule({
