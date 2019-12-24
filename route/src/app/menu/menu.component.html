@@ -1,1 +1,31 @@
-<p>menu works!</p>
+<div class="w3-main w3-content w3-padding" style="max-width:1200px;margin-top:100px">
+
+    <!-- First Photo Grid-->
+    <div class="w3-row-padding w3-padding-16 w3-center" id="food">
+          
+      
+      <p></p>
+
+      <table style="width:100%">
+          <tr>
+            <th>Dish</th>
+            <th>Price</th>
+            <th>Vegan</th>
+            <th>Add to cart</th>
+          </tr>
+
+          <tr *ngFor='let dish of dishes'>
+              <td class='td'>{{ dish.dish_name }}</td>
+              <td >${{ dish.price }}</td>
+              <td >{{ dish.is_vegan }}</td>
+              <td> <button class='addToCart' id='{{ dish.id }}' > Add To Cart</button> </td>
+            </tr>
+
+          
+        </table>
+
+      
+    </div>
+
+
+</div>
