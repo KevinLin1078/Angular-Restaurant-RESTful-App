@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { KitchenService  } from '../service/kitchen.service';
-
+import { Router} from '@angular/router'
 
 @Component({
   selector: 'app-provider-kitchen',
@@ -10,7 +10,7 @@ import { KitchenService  } from '../service/kitchen.service';
 export class ProviderKitchenComponent implements OnInit {
   public kitchens
 
-  constructor(public KitchenService: KitchenService) { }
+  constructor(public KitchenService: KitchenService, private Router: Router) { }
 
   async ngOnInit() {
     let response = await this.KitchenService.getProviderKitchen()
@@ -25,6 +25,9 @@ export class ProviderKitchenComponent implements OnInit {
 
   }
 
+  addDishView(kitchen){
+    this.Router.navigate(['menu/kitchen/', kitchen.id])
+  }
 
   
 
