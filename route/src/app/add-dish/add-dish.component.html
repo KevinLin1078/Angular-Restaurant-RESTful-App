@@ -2,13 +2,13 @@
       
 
 <div class="w3-section w3-padding-16">
-   <form method="post" novalidate="" enctype="multipart/form-data">
+   <form method="post" #addDishForm='ngForm' (ngSubmit)='addDish(addDishForm)' novalidate="" enctype="multipart/form-data">
       <input type="hidden" name="csrfmiddlewaretoken" value="tMkKUklienDKnKe0aOg4kiKALzUt6YwNQIG2abOcxf5CVtK3TxQAwWDyLOuPUZnu">
       <table stlye="border: 3px solid black;">
          <tbody>
-            <tr class='stick'><th><label for="id_dish_name">Dish name:</label></th><td><input type="text" name="dish_name" maxlength="50" required="" id="id_dish_name"></td></tr> &nbsp; &nbsp;
-            <tr class='stick'><th><label for="id_price">Price:</label></th><td><input type="number" name="price" step="0.01" required="" id="id_price"></td></tr> &nbsp; &nbsp;
-            <tr class='stick'><th><label for="id_is_vegan"> <input type="checkbox" name="is_vegan" id="id_is_vegan"> Is vegan:</label></th><td></td></tr> &nbsp; &nbsp;
+            <tr class='stick'><th><label for="id_dish_name">Dish name:</label></th><td><input ngModel required type="text" name="dish_name" maxlength="50" required="" id="id_dish_name"></td></tr> &nbsp; &nbsp;
+            <tr class='stick'><th><label for="id_price">Price:</label></th><td><input ngModel required type="number" name="price" step="0.01" required="" id="id_price"></td></tr> &nbsp; &nbsp;
+            <tr class='stick'><th><label for="id_is_vegan"> <input type="checkbox" ngModel name="is_vegan" id="id_is_vegan"> Is vegan:</label></th><td></td></tr> &nbsp; &nbsp;
             <tr class='stick'><input type="submit" class="button" value="Add Dish">  </tr>
          </tbody>
       </table>
