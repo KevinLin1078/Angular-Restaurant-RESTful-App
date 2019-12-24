@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { MenuService } from './service/menu.service'
+
+
 
 @Component({
   selector: 'app-add-dish',
@@ -7,9 +10,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddDishComponent implements OnInit {
 
-  constructor() { }
+  constructor( public MenuService: MenuService) { }
 
   ngOnInit() {
+  }
+
+  addDish(dish){
+
   }
 
 }

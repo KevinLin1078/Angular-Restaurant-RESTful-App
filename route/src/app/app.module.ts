@@ -16,7 +16,7 @@ import { Pipe1Pipe } from './pipe1.pipe';
 import { Service1Service } from './service/service1.service';
 import { CartService } from './service/cart.service'
 import { KitchenService } from './service/kitchen.service'
-
+import { MenuService } from './service/menu.service'
 
 //Component
 import { CartComponent } from './cart/cart.component';
@@ -54,7 +54,7 @@ import { MenuComponent } from './menu/menu.component';
     HttpClientModule,
     FormsModule
   ],
-  providers: [Service1Service,CartService, KitchenService],
+  providers: [Service1Service,CartService, KitchenService, MenuService],
   bootstrap: [AppComponent]
  
 })
