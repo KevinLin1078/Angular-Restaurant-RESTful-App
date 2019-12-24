@@ -12,7 +12,6 @@ export class AddDishComponent implements OnInit {
   public dishes;
   public kitchen_name;
   public kitchen_id;
-
   public is_vegan = 'false'
 
   constructor( public MenuService: MenuService, public ActivatedRoute: ActivatedRoute) { }
