@@ -26,7 +26,7 @@ export class OrderComponent implements OnInit {
   }
 
   goDetail(id:number){
-    console.log("I am in goEdit")
+    console.log("I am in goDetail")
     this.router.navigate(['/orderdetail/'+id]);
   }
 

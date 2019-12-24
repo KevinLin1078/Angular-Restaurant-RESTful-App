@@ -26,10 +26,11 @@ export class OrderdetailComponent implements OnInit {
       else{
         this.OrderID = parseInt(this.route.snapshot.paramMap.get('id'));
         this._orderSvc.getoneOrder(this.OrderID).subscribe(
-          (data) => this.thisOrder = data,
+          (data) => this.thisOrder = data['cart'],
           (error) => this.errorMsg = error,
           () => console.log('the sequence completed!')
         )
+        // console.log(this.thisOrder['cart'])
       }
 
   }

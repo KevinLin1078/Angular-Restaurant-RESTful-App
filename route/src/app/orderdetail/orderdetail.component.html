@@ -8,10 +8,10 @@
         <th></th>
     </tr>
 
-    <tr *ngFor="let cart of carts">
-        <td class='td'>{{ item.dish.dish_name }}</td>
-        <td>${{ item.dish.price }}</td>
-        <td>{{ item.dish.kitchen.kitchen_name }}</td>
+    <tr *ngFor="let ord of thisOrder">
+        <td class='td'>{{ ord.dish_name }}</td>
+        <td>${{ ord.price }}</td>
+        <td>{{ ord.kitchen_name }}</td>
         <td *ngIf="purchased != True">
             <a id='{{ item.id }}' href='#food' class='button'>Remove</a>
         </td> 

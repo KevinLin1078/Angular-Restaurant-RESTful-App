@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class OrdersService {
   orders_url = 'http://18.224.151.69/orders/'
-
+  orderdetail_url = 'http://18.224.151.69/purchasedOrder/'
   constructor(private HttpClient: HttpClient) { }
 
   get_orders(){
@@ -14,6 +14,6 @@ export class OrdersService {
   }
 
   getoneOrder(id){
-    return this.HttpClient.get<any>(this.orders_url+id, {/*observe:'response' as 'body',*/ withCredentials: true})
+    return this.HttpClient.get<any>(this.orderdetail_url+id, {/*observe:'response' as 'body',*/ withCredentials: true})
   }
 }
