@@ -16,6 +16,9 @@ export class OrderdetailComponent implements OnInit {
   public OrderID;
   public errorMsg;
   public thisOrder;
+  public name;
+  public order_id;
+  public price;
 
   constructor(private _orderSvc: OrdersService, public LoginService: Service1Service, private router: Router, 
     private route: ActivatedRoute) { }
@@ -26,7 +29,13 @@ export class OrderdetailComponent implements OnInit {
       else{
         this.OrderID = parseInt(this.route.snapshot.paramMap.get('id'));
         this._orderSvc.getoneOrder(this.OrderID).subscribe(
-          (data) => this.thisOrder = data['cart'],
+          (data) => {
+            this.thisOrder = data['cart']
+            this.name = data['name']
+            this.order_id = data['order_id']
+            this.price = data['price']
+
+          },
           (error) => this.errorMsg = error,
           () => console.log('the sequence completed!')
         )

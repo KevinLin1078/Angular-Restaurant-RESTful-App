@@ -1,1 +1,20 @@
-<p>add-dish works!</p>
+
+<div class="w3-container">
+    
+   <h3><b>Taste of Germany</b></h3>
+ 
+   <div class="w3-section w3-bottombar w3-padding-16">
+     
+         
+       <form method="post" novalidate="" enctype="multipart/form-data">
+         <input type="hidden" name="csrfmiddlewaretoken" value="tMkKUklienDKnKe0aOg4kiKALzUt6YwNQIG2abOcxf5CVtK3TxQAwWDyLOuPUZnu">
+         <table stlye="border: 3px solid black;">
+           <tbody><tr><th><label for="id_dish_name">Dish name:</label></th><td><input type="text" name="dish_name" maxlength="50" required="" id="id_dish_name"></td></tr>
+<tr><th><label for="id_price">Price:</label></th><td><input type="number" name="price" step="0.01" required="" id="id_price"></td></tr>
+<tr><th><label for="id_is_vegan">Is vegan:</label></th><td><input type="checkbox" name="is_vegan" id="id_is_vegan"></td></tr>
+         </tbody></table>
+         <input type="submit" class="button" value="Add Dish">  
+       </form>
+       
+   </div>
+ </div>
