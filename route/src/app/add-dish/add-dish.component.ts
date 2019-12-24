@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuService } from '../service/menu.service'
-
+import {ActivatedRoute} from '@angular/router'
 
 
 @Component({
@@ -9,13 +9,20 @@ import { MenuService } from '../service/menu.service'
   styleUrls: ['./add-dish.component.css']
 })
 export class AddDishComponent implements OnInit {
+  public dishes;
+  // KitchenId: number;
 
-  KitchenId: number;
+  constructor( public MenuService: MenuService, public ActivatedRoute: ActivatedRoute) { }
 
-  constructor( public MenuService: MenuService) { }
-
-  ngOnInit() {
-    this.MenuService.getProviderMenu(this.KitchenId)
+  async ngOnInit() {
+    let KitchenId = parseInt(this.ActivatedRoute.snapshot.paramMap.get('id'))
+    let response = await this.MenuService.getProviderMenu(KitchenId)
+    response.subscribe(async (resp)=>{
+      resp['status'] == 'ok' ?  this.dishes = await resp['dishes'] : alert("Django Error")
+    },
+    (err)=> {
+      alert('cannot view')
+    })
   }
 
   addDish(form){
