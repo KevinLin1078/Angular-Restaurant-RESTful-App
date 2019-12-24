@@ -12,6 +12,8 @@ import { OrderdetailComponent } from './orderdetail/orderdetail.component';
 import { ProviderKitchenComponent } from './provider-kitchen/provider-kitchen.component';
 import { AddKitchenComponent } from './add-kitchen/add-kitchen.component';
 import { MenuComponent } from './menu/menu.component';
+import { AddDishComponent } from './add-dish/add-dish.component';
+
 const routes: Routes = [
   { path: '', component: Route1Component},
   { path: 'login', component: Route1Component},
@@ -21,7 +23,9 @@ const routes: Routes = [
   { path: 'myKitchen', component: ProviderKitchenComponent},
   { path: 'addKitchen', component:  AddKitchenComponent},
 
-  { path: 'view/menu/kitchen/:id', component: MenuComponent}
+  { path: 'view/menu/kitchen/:id', component: MenuComponent},//buyer
+  { path: 'menu/kitchen/:id', component: AddDishComponent}, //provider
+  
 
 ];
 

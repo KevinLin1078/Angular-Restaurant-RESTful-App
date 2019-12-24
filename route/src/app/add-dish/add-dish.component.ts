@@ -18,7 +18,13 @@ export class AddDishComponent implements OnInit {
     this.MenuService.getProviderMenu(this.KitchenId)
   }
 
-  addDish(dish){
+  addDish(form){
+    const formData = new FormData();
+    formData.append("CSRF_TOKEN", '{{ csrf_token() }}')
+    formData.append("dish_name", form.value.dish_name)
+    formData.append("price", form.value.price)
+    formData.append('is_vegan',form.value.is_vegan)
+    alert(formData)
 
   }
 
