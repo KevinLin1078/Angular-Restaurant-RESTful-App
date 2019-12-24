@@ -15,8 +15,7 @@ export class MenuService {
     return this.HttpClient.get(this.menu_url+id, {/*observe:'response' as 'body',*/ withCredentials: true})
   }
 
-  getProvider(id ){
-    
+  getProviderMenu(id ){
     return this.HttpClient.get(this.provider_menu_url+id+'/', {/*observe:'response' as 'body',*/ withCredentials: true})
   }
 
