@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MenuService } from './service/menu.service'
+import { MenuService } from '../service/menu.service'
 
 
 
@@ -10,9 +10,12 @@ import { MenuService } from './service/menu.service'
 })
 export class AddDishComponent implements OnInit {
 
+  KitchenId: number;
+
   constructor( public MenuService: MenuService) { }
 
   ngOnInit() {
+    this.MenuService.getProviderMenu(this.KitchenId)
   }
 
   addDish(dish){

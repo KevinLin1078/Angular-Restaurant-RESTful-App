@@ -26,7 +26,7 @@ export class Route1Component implements OnInit {
 
   goMenu(id:number){
     console.log("I am in goDetail")
-    this.router.navigate(['/menu/kitchen/'+id]);
+    this.router.navigate(['/view/menu/kitchen/'+id]);
   }
 
 

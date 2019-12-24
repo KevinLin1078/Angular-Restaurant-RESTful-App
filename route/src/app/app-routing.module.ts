@@ -20,7 +20,8 @@ const routes: Routes = [
   { path: 'orderdetail/:id', component: OrderdetailComponent},
   { path: 'myKitchen', component: ProviderKitchenComponent},
   { path: 'addKitchen', component:  AddKitchenComponent},
-  { path: 'menu/kitchen/:id', component: MenuComponent}
+
+  { path: 'view/menu/kitchen/:id', component: MenuComponent}
 
 ];
 
