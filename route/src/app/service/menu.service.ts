@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
 export class MenuService {
   menu_url = 'http://18.224.151.69/view/menu/kitchen'
 
-  provider_menu_url = 'http://18.224.151.69/menu/kitchen/(?P<kitchen_id>.*)/;
+  provider_menu_url = 'http://18.224.151.69/menu/kitchen/';
 
   constructor(private HttpClient: HttpClient) { }
 
@@ -16,7 +16,8 @@ export class MenuService {
   }
 
   getProvider(id ){
-
+    
+    return this.HttpClient.get(this.provider_menu_url+id+'/', {/*observe:'response' as 'body',*/ withCredentials: true})
   }
 
 }
