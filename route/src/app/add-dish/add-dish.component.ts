@@ -10,28 +10,35 @@ import {ActivatedRoute} from '@angular/router'
 })
 export class AddDishComponent implements OnInit {
   public dishes;
-  // KitchenId: number;
+  public kitchen_name;
+  public kitchen_id;
 
   constructor( public MenuService: MenuService, public ActivatedRoute: ActivatedRoute) { }
 
   async ngOnInit() {
-    let KitchenId = parseInt(this.ActivatedRoute.snapshot.paramMap.get('id'))
-    let response = await this.MenuService.getProviderMenu(KitchenId)
+    this.kitchen_id = parseInt(this.ActivatedRoute.snapshot.paramMap.get('id'))
+    let response = await this.MenuService.getProviderMenu(this.kitchen_id)
     response.subscribe(async (resp)=>{
-      resp['status'] == 'ok' ?  this.dishes = await resp['dishes'] : alert("Django Error")
+      this.dishes = await resp['dishes']
+      this.kitchen_name = await resp['kitchen_name']
+
     },
     (err)=> {
-      alert('cannot view')
+      alert('Error in Kitchen View')
     })
   }
 
-  addDish(form){
+  async addDish(form){
     const formData = new FormData();
     formData.append("CSRF_TOKEN", '{{ csrf_token() }}')
     formData.append("dish_name", form.value.dish_name)
     formData.append("price", form.value.price)
     formData.append('is_vegan',form.value.is_vegan)
-    alert(formData)
+    let response = await this.MenuService.addDishToMenu(this.kitchen_id, formData )
+    response.subscribe(async (resp)=>{
+      this.ngOnInit()
+    })
+
 
   }
 

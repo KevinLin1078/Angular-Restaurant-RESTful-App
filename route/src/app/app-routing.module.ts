@@ -22,7 +22,6 @@ const routes: Routes = [
   { path: 'orderdetail/:id', component: OrderdetailComponent},
   { path: 'myKitchen', component: ProviderKitchenComponent},
   { path: 'addKitchen', component:  AddKitchenComponent},
-
   { path: 'view/menu/kitchen/:id', component: MenuComponent},//buyer
   { path: 'menu/kitchen/:id', component: AddDishComponent}, //provider
   
