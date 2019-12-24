@@ -8,7 +8,7 @@
          <tbody>
             <tr class='stick'><th><label for="id_dish_name">Dish name:</label></th><td><input ngModel required type="text" name="dish_name" maxlength="50" required="" id="id_dish_name"></td></tr> &nbsp; &nbsp;
             <tr class='stick'><th><label for="id_price">Price:</label></th><td><input ngModel required type="number" name="price" step="0.01" required="" id="id_price"></td></tr> &nbsp; &nbsp;
-            <tr class='stick'><th><label for="id_is_vegan"> <input type="checkbox" ngModel name="is_vegan" id="id_is_vegan"> Is vegan:</label></th><td></td></tr> &nbsp; &nbsp;
+            <tr class='stick'><th><label for="id_is_vegan"> <input type="checkbox" [(ngModel)]='is_vegan' name="is_vegan" id="id_is_vegan"> Is vegan:</label></th><td></td></tr> &nbsp; &nbsp;
             <tr class='stick'><input type="submit" class="button" value="Add Dish">  </tr>
          </tbody>
       </table>
@@ -16,6 +16,7 @@
    </form>
 </div>
 
+{{is_vegan}}
 
 <div class="w3-main w3-content w3-padding" style="max-width:1200px;margin-top:-50px">
 
