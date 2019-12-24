@@ -46,9 +46,17 @@ then
 	read name 
 
 	cd $name 
+	if [ -d ./dist/$name ]
+	then
+		sudo rm ./dist -rf
+	fi
+	sudo npm link
 	sudo npm run build
+	# sudo ng build --source-map=false
 	file=/etc/nginx/sites-enabled/default
 	angular_dir=/var/www/html/route
+	
+	
 	if [ -e  $file ]
 	then	
 		sudo rm $file
@@ -56,8 +64,9 @@ then
 
 	if [ -d  $angular_dir ]
 	then	
-		sudo rm $angular_dir -rf
+		sudo rm $angular_dir/*/ -r
 	fi
+	sudo mkdir -p /var/www/html
 	sudo mv ./dist/$name /var/www/html
 	sudo cp ~/angular/default /etc/nginx/sites-enabled/
 	sudo systemctl restart nginx
