@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
 import {Router } from '@angular/router';
-// import { getBuyerMenu } from '../service/menu.service';
-import { Service1Service } from '../service/service1.service';
 
 
 @Component({
@@ -15,8 +13,7 @@ export class Route1Component implements OnInit {
   public kitchens : any 
 
   constructor(private router: Router,
-              private HttpClient: HttpClient,
-              public LoginService: Service1Service
+              private HttpClient: HttpClient
   ){}
 
   ngOnInit() {
@@ -24,11 +21,6 @@ export class Route1Component implements OnInit {
         this.kitchens = response['kitchens'];
     })
 
-    if(this.LoginService.login == false ){
-      this.LoginService.go_home()
-    }else{
-
-    }
 
   }
 
