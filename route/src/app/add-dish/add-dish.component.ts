@@ -43,8 +43,5 @@ export class AddDishComponent implements OnInit {
     })
 
   }
-  // mark_vegan(event){
-  //   this.is_vegan = event.target.checked
-  // }
 
 }
