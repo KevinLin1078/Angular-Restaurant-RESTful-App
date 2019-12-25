@@ -28,7 +28,7 @@ export class MenuComponent implements OnInit {
   }
 
   addToCart(dish){
-  
+    
   }
 
 }

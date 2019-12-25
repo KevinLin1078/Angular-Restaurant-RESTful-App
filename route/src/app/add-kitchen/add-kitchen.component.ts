@@ -35,8 +35,6 @@ export class AddKitchenComponent implements OnInit {
       this.Router.navigate(['myKitchen'])
     })
 
-    
-
 
   }
 
