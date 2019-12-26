@@ -20,11 +20,6 @@ export class Service1Service {
   
   constructor( private HttpClient: HttpClient, public Router:Router ) { }
 
-  sign_up(formData){
-    return this.HttpClient.post<any>(this.signup_url, formData, {}) 
-
-  }
-
   login_user(formData){
     return this.HttpClient.post<any>(this.login_url, formData ,{/*observe:'response' as 'body',*/ withCredentials: true})
   }
