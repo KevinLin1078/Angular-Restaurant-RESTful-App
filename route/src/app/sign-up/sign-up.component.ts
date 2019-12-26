@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Service1Service  } from '../service/service1.service'
+import { User } from '../user';
 
 
 @Component({
@@ -9,11 +10,26 @@ import { Service1Service  } from '../service/service1.service'
 })
 
 export class SignUpComponent implements OnInit {
+  NewUser: User = {
+    username:'',
+    first_name: '',
+    last_name: '',
+    password1:'',
+    password2:'',
+    question_1:'',
+    answer_1: '',
+    question_2:'',
+    answer_2: '',
+    is_provider: false
+  };
+  submitted = false;
+  errorMsg = "";
 
   constructor(public LoginService: Service1Service) { }
 
   ngOnInit() {
   }
+
 
   async createNewUser(){
     const formData = new FormData();
@@ -21,7 +37,9 @@ export class SignUpComponent implements OnInit {
     formData.append("username", form.value.username)
     formData.append("password", form.value.password)
     let response = await this.LoginService.sign_up(formData)
+  }
 
+  OnSubmit(){
 
   }
 

@@ -11,6 +11,7 @@ import {  Router} from '@angular/router'
 export class Service1Service {
   login_url = 'http://18.224.151.69/login/';
   logout_url = 'http://18.224.151.69/logout/';
+
   signup_url = 'http://18.224.151.69/signup/'
 
   public login : boolean = false;
@@ -47,6 +48,10 @@ export class Service1Service {
 
   go_home(){
     this.Router.navigate(['']) 
+  }
+
+  sign_up(data){
+    return this.HttpClient.post(this.signup_url, data ,{/*observe:'response' as 'body',*/ withCredentials: true})
   }
 }
 
