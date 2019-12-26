@@ -21,7 +21,6 @@ export class Service1Service {
   
   constructor( private HttpClient: HttpClient, public Router:Router ) { }
 
-
   login_user(formData){
     return this.HttpClient.post<any>(this.login_url, formData ,{/*observe:'response' as 'body',*/ withCredentials: true})
   }
