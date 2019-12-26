@@ -17,7 +17,7 @@ export class Route1Component implements OnInit {
   ){}
 
   ngOnInit() {
-    this.HttpClient.get('http://18.224.151.69').subscribe(response => {
+    this.HttpClient.get('http://3.15.178.94').subscribe(response => {
         this.kitchens = response['kitchens'];
     })
 

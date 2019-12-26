@@ -5,9 +5,9 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class MenuService {
-  menu_url = 'http://18.224.151.69/view/menu/kitchen'
-  provider_menu_url = 'http://18.224.151.69/menu/kitchen/';
-  addToCart_url = 'http://18.224.151.69/addToCart/';
+  menu_url = 'http://3.15.178.94/view/menu/kitchen'
+  provider_menu_url = 'http://3.15.178.94/menu/kitchen/';
+  addToCart_url = 'http://3.15.178.94/addToCart/';
 
   constructor(private HttpClient: HttpClient) { }
 

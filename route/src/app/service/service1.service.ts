@@ -11,9 +11,9 @@ import { throwError } from 'rxjs';
 
 
 export class Service1Service {
-  login_url = 'http://18.224.151.69/login/';
-  logout_url = 'http://18.224.151.69/logout/';
-  signup_url = 'http://18.224.151.69/signup/'
+  login_url = 'http://3.15.178.94/login/';
+  logout_url = 'http://3.15.178.94/logout/';
+  signup_url = 'http://3.15.178.94/signup/'
 
   public login : boolean = false;
   public username : string;

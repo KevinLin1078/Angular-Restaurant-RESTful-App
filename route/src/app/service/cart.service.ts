@@ -7,9 +7,9 @@ import { FormBuilder, FormGroup } from '@angular/forms';
   providedIn: 'root'
 })
 export class CartService {
-  cart_url = 'http://18.224.151.69/shoppingCart/'
-  remove_cart_url = 'http://18.224.151.69/removeDish/'
-  purchase_url =  'http://18.224.151.69/purchase/'
+  cart_url = 'http://3.15.178.94/shoppingCart/'
+  remove_cart_url = 'http://3.15.178.94/removeDish/'
+  purchase_url =  'http://3.15.178.94/purchase/'
 
   constructor(private HttpClient: HttpClient){}
   

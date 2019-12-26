@@ -9,8 +9,8 @@ import { HttpClient } from '@angular/common/http';
 })
 
 export class KitchenService {
-  provider_kitchen_url = 'http://18.224.151.69/myKitchens/'
-  add_kitchen_url = 'http://18.224.151.69/addKitchen/'
+  provider_kitchen_url = 'http://3.15.178.94/myKitchens/'
+  add_kitchen_url = 'http://3.15.178.94/addKitchen/'
 
   constructor(private HttpClient: HttpClient) { }
 
