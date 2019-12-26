@@ -38,8 +38,6 @@ export class MenuComponent implements OnInit {
       alert("Added")
     })
 
-
-
   }
 
 }
