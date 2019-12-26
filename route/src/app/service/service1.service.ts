@@ -11,14 +11,19 @@ import {  Router} from '@angular/router'
 export class Service1Service {
   login_url = 'http://18.224.151.69/login/';
   logout_url = 'http://18.224.151.69/logout/';
-  signup_url='http://18.224.151.69/signup';
+
+  signup_url = 'http://18.224.151.69/signup/'
+
   public login : boolean = false;
   public username : string;
   public provider : boolean;
   
-
-  
   constructor( private HttpClient: HttpClient, public Router:Router ) { }
+
+  sign_up(formData){
+    return this.HttpClient.post<any>(this.signup_url, formData, {}) 
+
+  }
 
   login_user(formData){
     return this.HttpClient.post<any>(this.login_url, formData ,{/*observe:'response' as 'body',*/ withCredentials: true})
