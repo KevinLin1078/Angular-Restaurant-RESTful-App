@@ -21,7 +21,7 @@ export class SignUpComponent implements OnInit {
     answer_1: '',
     question_2:'',
     answer_2: '',
-    is_provider: false
+    is_provider: 'false'
   };
   submitted = false;
   errorMsg = "";
@@ -43,7 +43,7 @@ export class SignUpComponent implements OnInit {
     formData.append("question_2", this.NewUser.question_2)
     formData.append("answer_1", this.NewUser.answer_1)
     formData.append("answer_2", this.NewUser.answer_2)
-    formData.append("is_provider", this.NewUser.is_provider.toString())
+    formData.append("is_provider", this.NewUser.is_provider)
 
     let response = await this.LoginService.sign_up(formData)
     response.subscribe((resp)=>{
