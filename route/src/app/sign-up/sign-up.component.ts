@@ -48,6 +48,8 @@ export class SignUpComponent implements OnInit {
     let response = await this.LoginService.sign_up(formData)
     response.subscribe((resp)=>{
       console.log(resp)
+      this.router.navigate(['']);
+
     })
 
   }
