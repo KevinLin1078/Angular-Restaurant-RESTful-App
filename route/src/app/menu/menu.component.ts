@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { MenuService } from '../service/menu.service'
 import {ActivatedRoute} from '@angular/router'
 import { Service1Service  } from '../service/service1.service'
@@ -6,12 +6,14 @@ import { Service1Service  } from '../service/service1.service'
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.component.html',
-  styleUrls: ['./menu.component.css']
+  styleUrls: ['./menu.component.css'],
 })
 export class MenuComponent implements OnInit {
   kitchen_id: number;
   dishes: any;
   kitchen_name: any;
+
+
 
   constructor(public MenuService: MenuService, public ActivatedRoute: ActivatedRoute, public LoginService: Service1Service) { }
 
@@ -35,7 +37,7 @@ export class MenuComponent implements OnInit {
 
     let response = await this.MenuService.addToCart(formData)
     response.subscribe((resp)=>{
-      alert("Added")
+      
     })
 
   }
