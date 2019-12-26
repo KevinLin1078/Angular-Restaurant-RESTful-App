@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Service1Service  } from '../service/service1.service'
 import { User } from '../user';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -16,30 +17,30 @@ export class SignUpComponent implements OnInit {
     last_name: '',
     password1:'',
     password2:'',
-    question_1:'What is your favorite color?',
+    question_1:'',
     answer_1: '',
-    question_2:'What is your favorite place to live?',
+    question_2:'',
     answer_2: '',
     is_provider: false
   };
   submitted = false;
   errorMsg = "";
 
-  constructor(public LoginService: Service1Service) { }
+  constructor(public LoginService: Service1Service, private router: Router) { }
 
   ngOnInit() {
   }
 
 
-  async createNewUser(){
-    const formData = new FormData();
-    formData.append("CSRF_TOKEN", '{{ csrf_token() }}')
-    formData.append("username", form.value.username)
-    formData.append("password", form.value.password)
-    let response = await this.LoginService.sign_up(formData)
-  }
-
   OnSubmit(){
+    this.submitted = true;
+    console.log(this.NewUser);
+    this.LoginService.sign_up(this.NewUser)
+    .subscribe(
+      response => console.log('Success!', response),
+      error => this.errorMsg = error.statusText
+      );
+    this.router.navigate(['/employees']);
 
   }
 

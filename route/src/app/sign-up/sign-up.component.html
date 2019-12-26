@@ -4,7 +4,8 @@
     <form method="post" novalidate="" enctype="multipart/form-data">
       <input type="hidden" name="csrfmiddlewaretoken" value="7UDcnqrxpnhYK2XudRitDgiPgpFOHM2CBnSOxroDBRvwWvIUFg7oya6vzZG9q0fU">
       <table stlye="border: 3px solid black;">
-         <tbody><tr><th><label for="id_username">Username:</label></th><td><input type="text" name="username" maxlength="30" required="" id="id_username" [(ngModel)]="NewUser.username"></td></tr>
+         <tbody>
+           <tr><th><label for="id_username">Username:</label></th><td><input type="text" name="username" maxlength="30" required="" id="id_username" [(ngModel)]="NewUser.username"></td></tr>
 <tr><th><label for="id_first_name">First name:</label></th><td><input type="text" name="first_name" maxlength="20" required="" id="id_first_name" [(ngModel)]="NewUser.first_name"></td></tr>
 <tr><th><label for="id_last_name">Last name:</label></th><td><input type="text" name="last_name" maxlength="20" required="" id="id_last_name" [(ngModel)]="NewUser.last_name"></td></tr>
 <tr><th><label for="id_password1">Password:</label></th><td><input type="text" name="password1" maxlength="10" required="" id="id_password1" [(ngModel)]="NewUser.password1"></td></tr>

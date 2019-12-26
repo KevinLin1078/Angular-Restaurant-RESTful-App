@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import {  Router} from '@angular/router'
+import {catchError} from 'rxjs/operators';
+import { throwError } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +13,6 @@ import {  Router} from '@angular/router'
 export class Service1Service {
   login_url = 'http://18.224.151.69/login/';
   logout_url = 'http://18.224.151.69/logout/';
-
   signup_url = 'http://18.224.151.69/signup/'
 
   public login : boolean = false;
@@ -20,10 +21,6 @@ export class Service1Service {
   
   constructor( private HttpClient: HttpClient, public Router:Router ) { }
 
-  sign_up(formData){
-    return this.HttpClient.post<any>(this.signup_url, formData, {}) 
-
-  }
 
   login_user(formData){
     return this.HttpClient.post<any>(this.login_url, formData ,{/*observe:'response' as 'body',*/ withCredentials: true})
@@ -51,8 +48,16 @@ export class Service1Service {
   }
 
   sign_up(data){
-    return this.HttpClient.post(this.signup_url, data ,{/*observe:'response' as 'body',*/ withCredentials: true})
+    return this.HttpClient.post<any>(this.signup_url, data)
+    .pipe(catchError(this.errorHandler));
   }
+
+  errorHandler(error: HttpErrorResponse){
+    return throwError(error.message || "Server Error");
+  }
+
+
+
 }
 
 
