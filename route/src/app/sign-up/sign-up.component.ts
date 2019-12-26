@@ -13,9 +13,9 @@ export class SignUpComponent implements OnInit {
     last_name: '',
     password1:'',
     password2:'',
-    question_1:'',
+    question_1:'What is your favorite color?',
     answer_1: '',
-    question_2:'',
+    question_2:'What is your favorite place to live?',
     answer_2: '',
     is_provider: false
   };
