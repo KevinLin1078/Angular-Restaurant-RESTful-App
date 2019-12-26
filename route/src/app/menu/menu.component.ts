@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuService } from '../service/menu.service'
 import {ActivatedRoute} from '@angular/router'
+import { Service1Service  } from '../service/service1.service'
 
 @Component({
   selector: 'app-menu',
@@ -12,7 +13,7 @@ export class MenuComponent implements OnInit {
   dishes: any;
   kitchen_name: any;
 
-  constructor(public MenuService: MenuService, public ActivatedRoute: ActivatedRoute) { }
+  constructor(public MenuService: MenuService, public ActivatedRoute: ActivatedRoute, public LoginService: Service1Service) { }
 
   async ngOnInit() {
     this.kitchen_id = parseInt(this.ActivatedRoute.snapshot.paramMap.get('id'))
@@ -27,8 +28,18 @@ export class MenuComponent implements OnInit {
     })
   }
 
-  addToCart(dish){
-  
+  async addToCart(dish){
+    const formData = new FormData();
+    formData.append("CSRF_TOKEN", '{{ csrf_token() }}')
+    formData.append("dish_id", dish.id)
+
+    let response = await this.MenuService.addToCart(formData)
+    response.subscribe((resp)=>{
+      alert("Added")
+    })
+
+
+
   }
 
 }
