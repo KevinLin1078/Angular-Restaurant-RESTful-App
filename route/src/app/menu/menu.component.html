@@ -9,14 +9,14 @@
             <th>Dish</th>
             <th>Price</th>
             <th>Vegan</th>
-            <th>Add to cart</th>
+            <th >Add to cart</th>
           </tr>
 
           <tr *ngFor='let dish of dishes'>
               <td class='td'>{{ dish.dish_name }}</td>
               <td >${{ dish.price }}</td>
               <td >{{ dish.is_vegan }}</td>
-              <td> <button (click)='addToCart(dish)' class='addToCart' id='{{ dish.id }}' > Add To Cart</button> </td>
+              <td> <button *ngIf='this.LoginService.login' (click)='addToCart(dish)' class='addToCart' id='{{ dish.id }}' > Add To Cart</button> </td>
             </tr>
 
           
@@ -24,4 +24,6 @@
 
       
     </div>
+ 
+    
 

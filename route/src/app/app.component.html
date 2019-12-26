@@ -15,7 +15,7 @@
    
   
     
-   <a *ngIf='!LoginService.login' href='{% url "kitchen:signup" %}'  class="w3-bar-item w3-button w3-padding w3-text-teal"><i class="fa fa-user fa-fw w3-margin-right"></i> Signup </a>&nbsp;&nbsp; 
+   <a *ngIf='!LoginService.login' routerLink='/signup'  class="w3-bar-item w3-button w3-padding w3-text-teal"><i class="fa fa-user fa-fw w3-margin-right"></i> Signup </a>&nbsp;&nbsp; 
    
    <a *ngIf='LoginService.login' (click)="LoginService.logout_user()"  class="w3-bar-item w3-button w3-padding w3-text-teal"><i class="fa fa-user fa-fw w3-margin-right"></i> Logout </a>&nbsp;&nbsp; 
 
