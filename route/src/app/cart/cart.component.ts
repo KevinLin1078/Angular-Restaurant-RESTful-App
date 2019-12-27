@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef} from '@angular/core';
 import { CartService  } from '../service/cart.service';
 import { Service1Service} from '../service/service1.service'
 import { ActivatedRoute, Router} from '@angular/router'
@@ -16,7 +16,7 @@ export class CartComponent implements OnInit {
   public cart_length;
   public total;
 
-  constructor( public CartService: CartService, public LoginService: Service1Service, public Router:Router ) { }
+  constructor( public CartService: CartService, public LoginService: Service1Service, public Router:Router, public el : ElementRef ) { }
 
 
   async ngOnInit() {
@@ -38,12 +38,13 @@ export class CartComponent implements OnInit {
     return new Promise( resolve => setTimeout(resolve, ms) ); 
   }
 
-  async removeFromCart(item){
+  async removeFromCart(event,item){
+    this.poss(event)
     let response = await this.CartService.removeFromCart(item)
     response.subscribe(
       async (response) =>{
         console.log(response)
-        response['status'] == 'ok' ? this.ngOnInit() : alert('Django RemoveCart Error')
+        response['status'] == 'ok' ? this.total = await response['total'] : alert('Django RemoveCart Error')
       },
       (error)=>{
         alert('Removing Item Failed')
@@ -63,6 +64,12 @@ export class CartComponent implements OnInit {
       }  
     )
 
+  }
+
+  poss(event){
+    console.log(event.target.parentNode)
+    event.target.parentNode.parentNode.remove()
+    
   }
 
 }
