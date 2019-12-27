@@ -8,5 +8,5 @@ export interface User{
     answer_1: string;
     question_2:string;
     answer_2: string;
-    is_provider: string
+    is_provider: boolean
 }

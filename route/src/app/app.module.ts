@@ -7,6 +7,7 @@ import { Route1Component } from './route1/route1.component';
 import { Route2Component } from './route2/route2.component';
 import { RouteParamComponent } from './route-param/route-param.component';
 import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { FormsModule } from '@angular/forms';
 import { CustomDirective } from './custom.directive';
@@ -52,7 +53,8 @@ import { MenuComponent } from './menu/menu.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule
   ],
   providers: [Service1Service,CartService, KitchenService, MenuService],
   bootstrap: [AppComponent]
