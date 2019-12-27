@@ -18,7 +18,7 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
         opacity: 1,
         backgroundColor: 'green',
       })),
-      transition('initial=>final', animate('1500ms')),
+      transition('initial=>final', animate('200ms')),
     ]),
   ]
 
@@ -49,7 +49,7 @@ export class MenuComponent implements OnInit {
     formData.append("CSRF_TOKEN", '{{ csrf_token() }}')
     formData.append("dish_id", dish.id)
     this.currentState = 'final'
-    await this.delay(800);
+    
     let response = await this.MenuService.addToCart(formData)
     response.subscribe((resp)=>{
       this.currentState = 'initial'
