@@ -10,7 +10,7 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
   templateUrl: './menu.component.html',
   styleUrls: ['./menu.component.css'],
   animations: [
-    trigger('changeDivSize', [
+    trigger('MenuComponent', [
       state('initial', style({
         opacity: 0,
       })),
