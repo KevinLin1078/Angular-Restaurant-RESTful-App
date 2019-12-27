@@ -39,6 +39,7 @@ export class AddDishComponent implements OnInit {
     let response = await this.MenuService.addDishToMenu(this.kitchen_id, formData )
     response.subscribe(async (resp)=>{
       this.ngOnInit()
+      form.reset()
     })
 
   }
