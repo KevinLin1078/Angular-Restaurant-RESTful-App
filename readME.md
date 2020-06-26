@@ -1,4 +1,4 @@
-# Kitchen EATS 
+# Kitchen EATS by Kevin Lin
 Kitchen Eats is a AWS cloud-enabled, AngularJS powered, and DJANGO Rest integrated application.
 
 ### This application has its separate front-end and back-end. 
