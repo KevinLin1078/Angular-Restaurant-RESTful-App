@@ -45,10 +45,11 @@ $ echo 8 | bash run.sh
 ```
 
 ### If .sh file causes error , to fix it follow this
+``` bash
 $ sudo apt-get install dos2unix
 $ sudo dos2unix  run.sh
 $ sudo dos2unix  install.sh  
-
+```
 
 
 ### Development
